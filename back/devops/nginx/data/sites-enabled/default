@@ -1,0 +1,56 @@
+map $http_cloudfront_viewer_address $x_forwarded_for {
+  default $http_cloudfront_viewer_address;
+  "" $proxy_add_x_forwarded_for;
+}
+
+map $http_cloudfront_forwarded_proto $x_forwarded_proto {
+  default $http_cloudfront_forwarded_proto;
+  "" $scheme;
+}
+
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+
+  listen 443 ssl default_server;
+  listen [::]:443 ssl default_server;
+
+  ssl_certificate      ssl/localhost.cert;
+  ssl_certificate_key  ssl/localhost.key;
+
+  client_max_body_size 1m;
+  gzip on;
+  underscores_in_headers on;
+
+  # server_tokens off;
+
+  # more_clear_headers Server Server-Timing X-XSS-Protection X-Frame-Options Content-Security-Policy Strict-Transport-Security;
+
+  # add_header X-XSS-Protection "1; mode=block";
+  # add_header X-Frame-Options "DENY";
+  # add_header Content-Security-Policy "default-src 'self';" always;
+  # add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+
+  location / {
+    root /home/user/ai4cod/back/public;
+
+    error_page 413 /413.json;
+
+    try_files $uri @server;
+  }
+
+  location @server {
+    proxy_set_header Host $host;
+    proxy_set_header Origin $scheme://$host;
+
+    # proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    # proxy_set_header X-Forwarded-Proto $scheme;
+    # proxy_set_header X-Real-IP $remote_addr;
+
+    proxy_set_header X-Forwarded-For $x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $x_forwarded_proto;
+
+    proxy_pass http://localhost:3000;
+    proxy_redirect off;
+  }
+}

@@ -1,0 +1,32 @@
+en:
+  how_to:
+    standard/collaborators:
+      index:
+        - 'Here you share access to your subscription with other users.'
+        - 'You list and view some data of your collaborators.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for data using the filters tab.'
+        - 'You can click on the "view," "edit," and "delete" actions for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+        - 'You click on the "new" link to access the registration screen.'
+      show:
+        - 'On this screen:'
+        - 'You can view more data about your collaborator.'
+        - 'You can click on the "list" link to access the main screen.'
+      new:
+        - 'On this screen:'
+        - 'You can enter some data for your collaborator.'
+        - 'You can activate and deactivate access to your subscription for this collaborator.'
+        - 'You can select and filter the user by their UUID.'
+        - 'You can reset the data when you want to cancel the registration.'
+        - 'You can click on the "list" link to access the main screen.'
+      edit:
+        - 'On this screen:'
+        - 'You can update some data of your collaborator.'
+        - 'You can activate and deactivate access to your subscription for this collaborator.'
+        - 'You can select and filter the user by their UUID.'
+        - 'You can reset the data when you want to cancel the update.'
+        - 'You can click on the "list" link to access the main screen.'
+      create: []
+      update: []
+      destroy: []

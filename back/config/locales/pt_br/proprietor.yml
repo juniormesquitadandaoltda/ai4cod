@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    attributes:
+      proprietor:
+        name: Nome
+        email: Email
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+
+        tasks: Tarefas
+    models:
+      proprietor:
+        one: Proprietário
+        other: Proprietários
+
+  activemodel:
+    attributes:
+      proprietors_filter:

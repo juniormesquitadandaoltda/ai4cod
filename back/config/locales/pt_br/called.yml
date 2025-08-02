@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    attributes:
+      called:
+        subject: Assunto
+        message: Mensagem
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+    models:
+      called:
+        one: Chamado
+        other: Chamados
+
+  activemodel:
+    attributes:
+      calleds_filter:

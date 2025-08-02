@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://ai4cod.com/sitemap.xml

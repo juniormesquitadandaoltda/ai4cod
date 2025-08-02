@@ -1,0 +1,31 @@
+pt-BR:
+  how_to:
+    standard/calleds:
+      index:
+        - 'Aqui você gerencia seus chamados.'
+        - 'Você visualiza todos os seus chamados, seus assuntos, mensagens e respostas recebidas.'
+        - 'Você ordena ao clicar no título de cada coluna da tabela.'
+        - 'Você pesquisa por chamados específicos na tab filtros.'
+        - 'Você clica nas ações "exibir", "editar" e "excluir" de cada item na última coluna.'
+        - 'Você navega na tabela pela paginação abaixo dela.'
+        - 'Você clica no link "novo", para criar um novo chamado.'
+      show:
+        - 'Nesta tela:'
+        - 'Você vê informações detalhadas sobre seu chamado.'
+        - 'Você visualiza o assunto, sua mensagem e qualquer resposta fornecida.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      new:
+        - 'Nesta tela:'
+        - 'Você cria um novo chamado.'
+        - 'Você preenche o assunto e uma mensagem detalhada.'
+        - 'Você reseta os dados quando quer desistir da criação.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você atualiza os detalhes do seu chamado.'
+        - 'Você modifica o assunto e o conteúdo da mensagem.'
+        - 'Você reseta os dados quando quer desistir da atualização.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      create: []
+      update: []
+      destroy: []

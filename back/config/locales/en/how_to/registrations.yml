@@ -1,0 +1,10 @@
+en:
+  how_to:
+    login/registrations:
+      edit:
+        - 'Here you can view some data of your account.'
+        - 'You can update some data of your account.'
+        - 'You can cancel your account.'
+        - 'You can click on the "session" menu to access the main screen.'
+      update: []
+      destroy: []

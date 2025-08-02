@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    attributes:
+      archive:
+        filename: Name
+        record: Resource
+        record_id: Resource ID
+        record_type: Resource Type
+        type: Kind
+        subscription: Subscription
+        subscription_id: Subscription ID
+        attachments: Attachments
+        byte_size: Size
+    models:
+      archive:
+        one: Archive
+        other: Archives
+
+  activemodel:
+    attributes:
+      archives_filter:

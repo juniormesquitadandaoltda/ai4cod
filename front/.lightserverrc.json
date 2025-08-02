@@ -1,0 +1,5 @@
+{
+  "serve": "dist",
+  "proxy": "http://dockerhost:3000",
+  "proxypaths": [ "/data", "/admin/sidekiq", "/letter_opener", "/admin/swagger" ]
+}

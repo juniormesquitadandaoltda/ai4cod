@@ -1,0 +1,32 @@
+pt-BR:
+  how_to:
+    standard/collaborators:
+      index:
+        - 'Aqui você compartilha o acesso da sua assinatura com outros usuários(as).'
+        - 'Você lista e vẽ alguns dados dos seus colaboradores.'
+        - 'Você ordena ao clicar no título de cada coluna da tabela.'
+        - 'Você pesquisa por alguns dados na tab filtros.'
+        - 'Você clica nas ações "exibir", "editar" e "excluir" de cada item na última coluna.'
+        - 'Você navega na tabela pela paginação abaixo dela.'
+        - 'Você clica no link "novo", para acessar a tela de cadastro.'
+      show:
+        - 'Nesta tela:'
+        - 'Você vê mais dados do seu colaborador.'
+        - 'Você clica no link "listagem", para acessar a tela principal.'
+      new:
+        - 'Nesta tela:'
+        - 'Você cadastra alguns dados do seu colaborador.'
+        - 'Você ativa e desativa o acesso da sua assinatura por este colaborador.'
+        - 'Você seleciona e filtra o usuário pelo uuid dele.'
+        - 'Você reseta os dados quando quer desistir do cadastro.'
+        - 'Você clica no link "listagem", para acessar a tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você atualiza alguns dados do seu colaborador.'
+        - 'Você ativa e desativa o acesso da sua assinatura por este colaborador.'
+        - 'Você seleciona e filtra o usuário pelo uuid dele.'
+        - 'Você reseta os dados quando quer desistir da atualização.'
+        - 'Você clica no link "listagem", para acessar a tela principal.'
+      create: []
+      update: []
+      destroy: []

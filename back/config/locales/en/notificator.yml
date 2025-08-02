@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      notificator:
+        one: Notificator
+        other: Notificators
+    attributes:
+      notificator:
+        name: Name
+        actived: Actived?
+        token: Token
+        notifications_count: Notifications count
+
+        notifications: Notifications
+  activemodel:
+    attributes:
+      notificators_filter:

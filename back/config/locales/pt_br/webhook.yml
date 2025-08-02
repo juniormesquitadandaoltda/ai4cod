@@ -1,0 +1,31 @@
+pt-BR:
+  activerecord:
+    attributes:
+      webhook:
+        url: URL
+        actived: Ativado?
+        resource: Recurso
+        event: Evento
+        request_metadata: Metadados da requisição
+        requests_count: Total de requisições
+        requested_at: Requisitado em
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+    models:
+      webhook:
+        one: Webhook
+        other: Webhooks
+  enums:
+    webhook:
+      resource:
+        collaborator: Colaborador
+        page: Página
+        job: Emprego
+      event:
+        create: Cadastro
+        update: Atualização
+        destroy: Exclusão
+
+  activemodel:
+    attributes:
+      webhooks_filter:

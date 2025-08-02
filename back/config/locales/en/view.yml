@@ -1,0 +1,39 @@
+en:
+  view:
+    path:
+      index:
+        title: Listing
+      show:
+        title: Show
+      new:
+        title: New
+      edit:
+        title: Edit
+      create:
+        title: Create
+      update:
+        title: Update
+      personificate:
+        title: Personificate
+        message: Personificate id %{id}?
+      destroy:
+        title: Destroy
+        message: Destroy id %{id}?
+      export:
+        title: Export
+        message: Export all created until now?
+      logout:
+        title: Logout
+        message: Are you sure?
+      preview:
+        title: Preview
+      index_archives:
+        title: Archives
+      new_archives:
+        title: New archive
+    page:
+      session:
+        title: Session
+    public:
+      not_found: The page %{subdomain} is available. Click 'Exit' and login to book.
+      unprocessable_entity: The page %{subdomain} is being approved. Click 'Exit' and login to book another one.

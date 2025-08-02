@@ -1,0 +1,29 @@
+en:
+  how_to:
+    standard/archives:
+      index:
+        - 'Here you can manage your archives.'
+        - 'You can see all your archives, their filenames, and associated records.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for specific archives using the filters tab.'
+        - 'You can click on the "view", "edit", and "delete" actions for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+      show:
+        - 'On this screen:'
+        - 'You can view detailed information about your archive.'
+        - 'You can see the filename, associated record, and upload details.'
+        - 'You can click on the "list" link to return to the main screen.'
+      new:
+        - 'On this screen:'
+        - 'You can create a new archive.'
+        - 'You need to provide a record kind, record id, and upload a file.'
+        - 'You can reset the data when you want to cancel the creation.'
+        - 'You can click on the "list" link to return to the main screen.'
+      edit:
+        - 'On this screen:'
+        - 'You can update the details of your archive.'
+        - 'You can modify the filename.'
+        - 'You can click on the "list" link to return to the main screen.'
+      create: []
+      update: []
+      destroy: []

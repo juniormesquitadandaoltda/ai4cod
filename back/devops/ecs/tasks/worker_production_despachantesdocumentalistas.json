@@ -1,0 +1,146 @@
+{
+  "family": "worker_production_ai4cod",
+  "containerDefinitions": [
+    {
+      "name": "ai4cod",
+      "image": "623386377432.dkr.ecr.us-east-2.amazonaws.com/ai4cod.com:latest",
+      "cpu": 991,
+      "memory": 514,
+      "portMappings": [],
+      "essential": true,
+      "entryPoint": [
+        "./devops/entrypoint/worker.sh"
+      ],
+      "command": [],
+      "environment": [
+        {
+          "name": "RAILS_ENV",
+          "value": "production"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "secrets": [
+        {
+          "name": "POSTGRESQL_USERNAME_FULL",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:rds/full/username::"
+        },
+        {
+          "name": "POSTGRESQL_PASSWORD_FULL",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:rds/full/password::"
+        },
+        {
+          "name": "POSTGRESQL_USERNAME",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:rds/standard/username::"
+        },
+        {
+          "name": "POSTGRESQL_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:rds/standard/password::"
+        },
+        {
+          "name": "POSTGRESQL_HOST",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:rds/host/all::"
+        },
+        {
+          "name": "POSTGRESQL_PORT",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:rds/port/all::"
+        },
+        {
+          "name": "SECRET_KEY_BASE",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:rails/secret/all::"
+        },
+        {
+          "name": "STORAGE_REGION",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:s3/region/all::"
+        },
+        {
+          "name": "STORAGE_BUCKET",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:s3/bucket/all::"
+        },
+        {
+          "name": "STORAGE_ACCESS_KEY_ID",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:iam/access/key::"
+        },
+        {
+          "name": "STORAGE_SECRET_ACCESS_KEY",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:iam/access/secret::"
+        },
+        {
+          "name": "WORKER_CONCURRENCY",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:woker/concurrency/production::"
+        },
+        {
+          "name": "REDIS_URL",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:redis/url/all::"
+        },
+        {
+          "name": "SENTRY_DSN",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:sentry/dsn/all::"
+        },
+        {
+          "name": "SENTRY_RATE",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:sentry/rate/production::"
+        },
+        {
+          "name": "SMTP_ADDRESS",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:smtp/address/all::"
+        },
+        {
+          "name": "SMTP_DOMAIN",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:smtp/domain/all::"
+        },
+        {
+          "name": "SMTP_PORT",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:smtp/port/all::"
+        },
+        {
+          "name": "SMTP_USERNAME",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:smtp/username/all::"
+        },
+        {
+          "name": "SMTP_PASSWORD",
+          "valueFrom": "arn:aws:secretsmanager:us-east-2:623386377432:secret:ai4cod.com-H0Tr1N:smtp/password/all::"
+        }
+      ],
+      "startTimeout": 2,
+      "stopTimeout": 2,
+      "interactive": true,
+      "pseudoTerminal": true,
+      "ulimits": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/worker_production_ai4cod",
+          "awslogs-create-group": "true",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs"
+        },
+        "secretOptions": []
+      },
+      "healthCheck": {
+        "command": [
+          "sh",
+          "-c",
+          "ps aux | grep '[s]idekiq'"
+        ],
+        "interval": 5,
+        "timeout": 2,
+        "retries": 3,
+        "startPeriod": 2
+      },
+      "systemControls": []
+    }
+  ],
+  "taskRoleArn": "arn:aws:iam::623386377432:role/ecsTaskRole",
+  "executionRoleArn": "arn:aws:iam::623386377432:role/ecsTaskExecutionRole",
+  "networkMode": "bridge",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "runtimePlatform": {
+    "cpuArchitecture": "ARM64",
+    "operatingSystemFamily": "LINUX"
+  }
+}

@@ -1,0 +1,19 @@
+en:
+  how_to:
+    standard/audits:
+      index:
+        - 'Here you can view all audits of your subscription activities.'
+        - 'You can see who made changes, what was changed, and when.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for specific audits using the filters tab.'
+        - 'You can click on the "view" action for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+      show:
+        - 'On this screen:'
+        - 'You can view detailed information about a specific audit.'
+        - 'You can see the exact changes that were made.'
+        - 'You can see who made the changes and when they were made.'
+        - 'You can click on the "list" link to return to the main screen.'
+      create: []
+      update: []
+      destroy: []

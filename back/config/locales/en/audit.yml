@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    attributes:
+      audit:
+    models:
+      audit:
+        one: Audit
+        other: Audits
+
+  activemodel:
+    attributes:
+      audits_filter:

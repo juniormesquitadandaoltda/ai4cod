@@ -1,0 +1,11 @@
+pt-BR:
+  how_to:
+    standard/sessions:
+      show:
+        - 'Aqui você vê alguns dados do seu login atual.'
+        - 'Você tem o seu uuid, que te permite ser um colaborador(a) em outra conta.'
+        - 'Você seleciona a sua assinatura ou uma outra em que você colabora.'
+        - 'Você atualiza a sua sessão para acessar od dados de uma assinatura.'
+        - 'Você reseta os dados quando quer desistir da atualização.'
+        - 'Você faz logout.'
+      update: []

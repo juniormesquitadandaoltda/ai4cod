@@ -1,0 +1,8 @@
+pt-BR:
+  how_to:
+    standard/subscriptions:
+      show:
+        - 'Aqui você pode ver alguns dados da sua assinatura atual.'
+        - 'Você pode ver o nome, email e data de vencimento da sua assinatura.'
+        - 'Você pode clicar no link "list" para voltar para a tela principal.'
+      update: []

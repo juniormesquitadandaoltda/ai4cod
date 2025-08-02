@@ -1,0 +1,25 @@
+require 'rails_helper'
+
+module STANDARD
+  RSpec.describe SubscriptionsFilter, type: :filter do
+    let(:current_user) { create(:user) }
+    let(:current_subscription) { create(:subscription) }
+
+    describe '.constants' do
+      it { expect(described_class::MODEL).to eq(::Subscription) }
+    end
+
+    it '.search_attributes' do
+      expect(subject).to standard_search_attributes(
+        string: %i[name]
+      )
+    end
+
+    it '#select' do
+      expect(subject.send(:select)).to eq(%i[
+        id
+        name
+      ])
+    end
+  end
+end

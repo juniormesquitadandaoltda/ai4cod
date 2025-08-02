@@ -1,0 +1,31 @@
+en:
+  how_to:
+    standard/calleds:
+      index:
+        - 'Here you can manage your calleds.'
+        - 'You can see all your calleds, their subjects, messages, and any answers received.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for specific calleds using the filters tab.'
+        - 'You can click on the "view," "edit," and "delete" actions for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+        - 'You click on the "new" link to create a new called.'
+      show:
+        - 'On this screen:'
+        - 'You can view detailed information about your called.'
+        - 'You can see the subject, your message, and any answers provided.'
+        - 'You can click on the "list" link to return to the main screen.'
+      new:
+        - 'On this screen:'
+        - 'You can create a new called.'
+        - 'You need to provide a subject and a detailed message.'
+        - 'You can reset the data when you want to cancel the creation.'
+        - 'You can click on the "list" link to return to the main screen.'
+      edit:
+        - 'On this screen:'
+        - 'You can update the details of your called.'
+        - 'You can modify the subject and message content.'
+        - 'You can reset the data when you want to cancel the update.'
+        - 'You can click on the "list" link to return to the main screen.'
+      create: []
+      update: []
+      destroy: []

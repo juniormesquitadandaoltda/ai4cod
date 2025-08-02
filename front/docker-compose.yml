@@ -1,0 +1,36 @@
+name: ai4cod_front
+services:
+  app:
+    image: ai4cod_front
+    build:
+      args:
+        ARG_PLATFORM: ${ARG_PLATFORM}
+        ARG_LINUX_LOCALE: ${ARG_LINUX_LOCALE}
+        ARG_USER_UID: ${ARG_USER_UID}
+        ARG_USER_GID: ${ARG_USER_GID}
+        ARG_NODE_VERSION: ${ARG_NODE_VERSION}
+        ARG_NPM_VERSION: ${ARG_NPM_VERSION}
+      context: .
+    working_dir: /home/user/ai4cod/front
+    environment:
+      PORT: 4000
+      HOST: 0.0.0.0
+    extra_hosts:
+      - dockerhost:host-gateway
+    ports:
+      - 4004:4000
+    tty: true
+    volumes:
+      - app:/usr/local
+      - ~/.ssh:/home/user/.ssh
+      - ~/.gitconfig:/home/user/.gitconfig
+      - ~/.bash_history:/home/user/.bash_history
+      - ~/.netrc:/home/user/.netrc
+      - ./../:/home/user/ai4cod
+    deploy:
+      resources:
+        limits:
+          cpus: 1.99
+          memory: 2999M
+volumes:
+  app:

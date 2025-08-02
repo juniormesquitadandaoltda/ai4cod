@@ -1,0 +1,10 @@
+en:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} was successfully created. Want to create another one?'
+      update:
+        notice: '%{resource_name} was successfully updated. Want you update again?'
+      destroy:
+        notice: '%{resource_name} was successfully destroyed.'
+        alert: '%{destroy_alert}'

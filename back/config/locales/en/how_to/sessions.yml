@@ -1,0 +1,11 @@
+en:
+  how_to:
+    standard/sessions:
+      show:
+        - 'Here you can view some data of your current login.'
+        - 'You have your UUID, which allows you to be a collaborator in another account.'
+        - 'You can select your subscription or another one that you collaborate on.'
+        - 'You can update your session to access the data of a subscription.'
+        - 'You can reset the data when you want to cancel the update.'
+        - 'You can log out.'
+      update: []

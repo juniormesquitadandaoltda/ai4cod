@@ -1,0 +1,182 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        confirmation_sent_at: Enviado em
+        confirmation_token: Token de confirmação
+        confirmed_at: Confirmado em
+        created_at: Criado em
+        current_password: Senha atual
+        current_sign_in_at: Último login em
+        current_sign_in_ip: Último IP de login
+        email: E-mail
+        encrypted_password: Senha criptografada
+        failed_attempts: Tentativas falhas
+        last_sign_in_at: Último login em
+        last_sign_in_ip: Último IP de login
+        locked_at: Bloqueado em
+        password: Senha temporária
+        password_confirmation: Confirmação de senha
+        remember_created_at: Lembrar criado em
+        remember_me: Lembrar-me
+        reset_password_sent_at: Enviado em
+        reset_password_token: Token de redefinição de senha
+        sign_in_count: Número de acessos
+        unconfirmed_email: E-mail não confirmado
+        unlock_token: Token de desbloqueio
+        updated_at: Atualizado em
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+
+  devise:
+    mailer:
+      confirmation_instructions:
+        subject: Instruções de primeiro acesso
+      email_changed:
+        subject: Email alterado
+      password_change:
+        subject: Senha alterada
+      reset_password_instructions:
+        subject: Instruções de acesso
+      unlock_instructions:
+        subject: Instruções de desbloqueio
+
+  login:
+    confirmations:
+      confirmed: Uma mensagem com um link de redefinição de senha foi enviada para o seu endereço de e-mail. Siga o link para mudar sua senha.
+      edit:
+        title: Confirme sua conta
+      new:
+        title: Solicitar confirmação da conta
+        resend_confirmation_instructions: Reenviar instruções de confirmação
+      send_instructions: Você receberá um e-mail com instruções de como confirmar seu endereço de e-mail em alguns minutos.
+      send_paranoid_instructions: Se o seu endereço de e-mail existir em nosso banco de dados, você receberá um e-mail com instruções de como confirmar seu endereço de e-mail em alguns minutos.
+    failure:
+      already_authenticated: Você já está conectado.
+      inactive: Sua conta ainda não está ativada.
+      invalid: '%{authentication_keys} ou senha temporária inválida.'
+      last_attempt: Você tem mais uma tentativa antes que sua conta seja bloqueada.
+      locked: Sua conta está bloqueada.
+      not_found_in_database: '%{authentication_keys} ou senha temporária inválida.'
+      timeout: Sua sessão expirou. Por favor, faça login novamente para continuar.
+      unauthorized: Você precisa fazer login antes de continuar.
+      not_found: Recurso não encontrado.
+      unprocessable_entity: Token de autenticidade inválido.
+      unconfirmed: Você precisa confirmar seu endereço de e-mail antes de continuar.
+    mailer:
+      confirmation_instructions:
+        greeting: Bem-vindo(a) %{recipient}!
+        instruction:
+          - 'Aqui está sua primeira senha temporária, para logar apenas 1 vez com seu e-mail em até 3 minutos.'
+          - 'Você deve copiar aqui e colar no campo "Senha temporária" da segunda etapa de login.'
+        copy: Copiar senha temporária
+        copied: Senha temporária copiada!
+      email_changed:
+        greeting: Olá %{recipient}!
+        message: Estamos entrando em contato para notificá-lo(a) que seu email foi alterado para %{email}.
+        message_unconfirmed: Estamos entrando em contato para notificá-lo(a) que seu email está sendo alterado para %{email}.
+      password_change:
+        greeting: Olá %{recipient}!
+        message: Estamos entrando em contato para notificá-lo(a) que sua senha foi alterada.
+      reset_password_instructions:
+        greeting: Olá %{recipient}!
+        instruction:
+          - 'Aqui está sua nova senha temporária, para logar apenas 1 vez com seu e-mail em até 3 minutos.'
+          - 'Você deve copiar aqui e colar no campo "Senha temporária" da segunda etapa de login.'
+        copy: Copiar senha temporária
+        copied: Senha temporária copiada!
+      unlock_instructions:
+        greeting: Olá %{recipient}!
+        instruction: 'Clique no link abaixo para desbloquear sua conta:'
+        message: Sua conta foi bloqueada devido a um número excessivo de tentativas de login mal sucedidas.
+        action: Desbloquear minha conta
+    omniauth_callbacks:
+      failure: Não foi possível autenticá-lo(a) a partir de %{kind} porque "%{reason}".
+      success: Autenticado(a) com sucesso a partir da conta %{kind}.
+    passwords:
+      edit:
+        title: Atualizar sua senha
+        change_my_password: Atualizar minha senha
+        change_your_password: Atualizar sua senha
+        confirm_new_password: Confirmar nova senha
+        new_password: Nova senha
+      new:
+        title: Solicitar a alteração de senha
+        forgot_your_password: Esqueceu sua senha?
+        send_me_reset_password_instructions: Enviar instruções de redefinição de senha
+      no_token: Você não pode acessar esta página sem vir de um email de redefinição de senha. Se você veio de um email de redefinição de senha, certifique-se de usar a URL completa fornecida.
+      send_instructions: Você receberá um email com instruções sobre como redefinir sua senha em alguns minutos.
+      send_paranoid_instructions: Se seu endereço de email existir em nosso banco de dados, você receberá um link de recuperação de senha em seu endereço de email em alguns minutos.
+      updated: Sua senha foi alterada com sucesso. Você está conectado(a) agora.
+      updated_not_active: Sua senha foi alterada com sucesso.
+    registrations:
+      destroyed: Tchau! Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.
+      edit:
+        title: Editando login
+        are_you_sure: Você tem certeza?
+        cancel_my_account: Excluir login
+        currently_waiting_confirmation_for_email: 'Aguardando confirmação para: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: deixe em branco se não quiser alterá-lo
+        unhappy: Insatisfeito?
+        update: Atualizar
+        we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas alterações
+      new:
+        title: Registrar sua conta
+      signed_up: Bem-vindo! Você se registrou com sucesso.
+      signed_up_but_inactive: Você se registrou com sucesso. No entanto, não conseguimos fazer login porque sua conta ainda não está ativada.
+      signed_up_but_locked: Você se registrou com sucesso. No entanto, não conseguimos fazer login porque sua conta está bloqueada.
+      signed_up_but_unconfirmed: Uma mensagem com um link de confirmação foi enviada para o seu endereço de e-mail. Siga o link para ativar sua conta.
+      update_needs_confirmation: Sua conta foi atualizada com sucesso, mas precisamos verificar seu novo endereço de e-mail. Por favor, verifique seu e-mail e siga o link de confirmação para confirmar seu novo endereço de e-mail.
+      updated: Sua conta foi atualizada com sucesso.
+      updated_but_not_signed_in: Sua conta foi atualizada com sucesso, mas como sua senha foi alterada, você precisa fazer login novamente.
+    sessions:
+      already_signed_out: Deslogado com sucesso.
+      new:
+        title: Registre-se ou faça login aqui
+      signed_in: Logado com sucesso.
+      signed_out: Deslogado com sucesso.
+      unconfirmed_or_inactive: Certifique-se de ter confirmado sua conta e definido sua senha.
+      last_attempt: Você tem mais uma tentativa antes que sua conta seja bloqueada.
+      locked: Sua conta está bloqueada.
+      new_temp_password: Você receberá sua nova senha temporária no seu endereço de e-mail em alguns minutos.
+    shared:
+      links:
+        back: Voltar
+        didn_t_receive_confirmation_instructions: Não recebeu as instruções de confirmação?
+        didn_t_receive_unlock_instructions: Não recebeu as instruções de desbloqueio?
+        forgot_your_password: Esqueceu sua senha?
+        sign_in: Entrar
+        sign_in_with_provider: Entrar com %{provider}
+        sign_up: Criar conta
+        change: Atualizar
+        confirm: Confirmar
+        unlock: Desbloquear
+        request: Solicitar
+        cancel_my_account: Excluir login
+        are_you_sure: Você tem certeza?
+        request_access_token: Solicitar senha temporária
+      minimum_password_length:
+        one: "(mínimo de %{count} caractere)"
+        other: "(mínimo de %{count} caracteres)"
+    unlocks:
+      edit:
+        title: Desbloquear sua conta
+      new:
+        title: Solicitar desbloqueio da sua conta
+        resend_unlock_instructions: Reenviar instruções de desbloqueio
+      send_instructions: Você receberá um e-mail com instruções de como desbloquear sua conta em alguns minutos.
+      send_paranoid_instructions: Se sua conta existir, você receberá um e-mail com instruções de como desbloqueá-la em alguns minutos.
+      unlocked: Sua conta foi desbloqueada com sucesso. Por favor, faça login para continuar.
+  errors:
+    messages:
+      already_confirmed: já foi confirmado, por favor, tente fazer login
+      confirmation_period_expired: precisa ser confirmado dentro de %{period}, por favor solicite um novo
+      expired: expirou, por favor solicite um novo
+      not_found: não encontrado
+      not_locked: não estava bloqueado
+      not_saved:
+        one: '1 erro impediu que este(a) %{resource} fosse salvo(a):'
+        other: "%{count} erros impediram que este(a) %{resource} fosse salvo(a):"
+      invalid_login: E-mail ou senha temporária inválida

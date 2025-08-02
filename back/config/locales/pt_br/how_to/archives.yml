@@ -1,0 +1,29 @@
+pt-BR:
+  how_to:
+    standard/archives:
+      index:
+        - 'Aqui você pode gerenciar seus arquivos.'
+        - 'Você pode ver todos os seus arquivos, seus nomes e registros associados.'
+        - 'Você pode ordenar clicando no título de cada coluna da tabela.'
+        - 'Você pode pesquisar arquivos específicos usando a aba de filtros.'
+        - 'Você pode clicar nas ações "visualizar", "editar" e "excluir" para cada item na última coluna.'
+        - 'Você navega pela tabela usando a paginação abaixo dela.'
+      show:
+        - 'Nesta tela:'
+        - 'Você pode visualizar informações detalhadas sobre seu arquivo.'
+        - 'Você pode ver o nome do arquivo, o registro associado e os detalhes do upload.'
+        - 'Você pode clicar no link "listar" para retornar à tela principal.'
+      new:
+        - 'Nesta tela:'
+        - 'Você cria um novo arquivo.'
+        - 'Você precisa fornecer um tipo de registro, um ID de registro e um arquivo.'
+        - 'Você reseta os dados quando quer desistir da criação.'
+        - 'Você clica no link "listar", para retornar à tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você atualiza os detalhes do seu arquivo.'
+        - 'Você modifica o nome do arquivo.'
+        - 'Você clica no link "listar", para retornar à tela principal.'
+      create: []
+      update: []
+      destroy: []

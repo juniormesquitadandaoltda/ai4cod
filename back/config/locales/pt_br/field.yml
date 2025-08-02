@@ -1,0 +1,33 @@
+pt-BR:
+  activerecord:
+    attributes:
+      field:
+        name: Nome
+        resource: Recurso
+        values: Valores
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+
+        tasks: Tarefas
+        vehicles: Veículos
+    models:
+      field:
+        one: Campo
+        other: Campos
+  enums:
+    field:
+      resource:
+        task: Tarefa
+        vehicle: Veículo
+      name:
+        stage: Etapa
+        brand: Marca
+        model: Modelo
+        color: Cor
+        fuel: Combustível
+        category: Categoria
+        kind: Tipo
+
+  activemodel:
+    attributes:
+      fields_filter:

@@ -1,0 +1,10 @@
+pt-BR:
+  flash:
+    actions:
+      create:
+        notice: 'Cadastro de %{resource_name} realizado com sucesso. Deseja iniciar outro?'
+      update:
+        notice: 'Atualização de %{resource_name} realizada com sucesso. Deseja editar novamente?'
+      destroy:
+        notice: 'Exclusão de %{resource_name} realizada com sucesso.'
+        alert: '%{destroy_alert}'

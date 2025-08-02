@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    attributes:
+      archive:
+        filename: Nome
+        record: Recurso
+        record_id: Recurso ID
+        record_type: Recurso Tipo
+        type: Tipo
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+        attachments: Anexos
+        byte_size: Tamanho
+    models:
+      archive:
+        one: Arquivo
+        other: Arquivos
+
+  activemodel:
+    attributes:
+      archives_filter:

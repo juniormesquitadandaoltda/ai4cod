@@ -1,0 +1,8 @@
+p
+  = t('.greeting', recipient: @resource.name)
+p
+  = t('.message')
+p
+  = t('.instruction')
+p
+  = link_to t('.action'), edit_login_unlock_url(unlock_token: @token), target: :_blank, rel: 'noopener noreferrer'

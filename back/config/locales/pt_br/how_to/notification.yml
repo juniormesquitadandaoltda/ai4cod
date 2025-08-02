@@ -1,0 +1,33 @@
+pt-BR:
+  how_to:
+    standard/notification:
+      index:
+        - 'Aqui você gerencia suas notificações.'
+        - 'Você visualiza todas as suas notificações, seus tokens e status.'
+        - 'Você ordena ao clicar no título de cada coluna da tabela.'
+        - 'Você pesquisa por notificações específicas na tab filtros.'
+        - 'Você clica nas ações "exibir", "editar" e "excluir" de cada item na última coluna.'
+        - 'Você navega na tabela pela paginação abaixo dela.'
+        - 'Você clica no link "novo", para criar uma nova notificação.'
+      show:
+        - 'Nesta tela:'
+        - 'Você vê informações detalhadas sobre sua notificação.'
+        - 'Você visualiza o nome e se está ativo.'
+        - 'Você também vê metadados de requisição e informações de rastreamento.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      new:
+        - 'Nesta tela:'
+        - 'Você cria uma nova notificação.'
+        - 'Você precisa fornecer um nome.'
+        - 'Você pode ativar ou desativar a notificação.'
+        - 'Você reseta os dados quando quer desistir da criação.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você atualiza os detalhes da sua notificação.'
+        - 'Você modifica o nome e status ativo.'
+        - 'Você reseta os dados quando quer desistir da atualização.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      create: []
+      update: []
+      destroy: []

@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    attributes:
+      notification:
+        url: URL
+        headers: Headers
+        body: Body
+        notificator: Notification
+        notificator_id: Notification ID
+    models:
+      notification:
+        one: Notification
+        other: Notifications
+
+  activemodel:
+    attributes:
+      notifications_filter:

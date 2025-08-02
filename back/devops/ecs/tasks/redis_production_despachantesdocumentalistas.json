@@ -1,0 +1,67 @@
+{
+  "family": "redis_production_ai4cod",
+  "containerDefinitions": [
+    {
+      "name": "redis",
+      "image": "public.ecr.aws/docker/library/redis:7.0.10",
+      "cpu": 25,
+      "memory": 50,
+      "portMappings": [
+        {
+          "name": "redis",
+          "containerPort": 6379,
+          "hostPort": 6379,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "command": [
+        "sh",
+        "-c",
+        "redis-server --bind 0.0.0.0 --protected-mode no --save 60 1 --loglevel warning --maxclients 10000"
+      ],
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "startTimeout": 2,
+      "stopTimeout": 2,
+      "interactive": true,
+      "pseudoTerminal": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/redis_production_ai4cod",
+          "awslogs-create-group": "true",
+          "awslogs-region": "us-east-2",
+          "awslogs-stream-prefix": "ecs"
+        },
+        "secretOptions": []
+      },
+      "healthCheck": {
+        "command": [
+          "sh",
+          "-c",
+          "redis-cli ping"
+        ],
+        "interval": 5,
+        "timeout": 2,
+        "retries": 3,
+        "startPeriod": 2
+      },
+      "systemControls": []
+    }
+  ],
+  "taskRoleArn": "arn:aws:iam::623386377432:role/ecsTaskRole",
+  "executionRoleArn": "arn:aws:iam::623386377432:role/ecsTaskExecutionRole",
+  "networkMode": "bridge",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "runtimePlatform": {
+    "cpuArchitecture": "ARM64",
+    "operatingSystemFamily": "LINUX"
+  }
+}

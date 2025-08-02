@@ -1,0 +1,45 @@
+en:
+  activerecord:
+    models:
+      subscription:
+        one: Subscription
+        other: Subscriptions
+    attributes:
+      subscription:
+        actived: Actived?
+        name: Name
+        user: User
+        due_date: Due date
+        user_id: User ID
+        maximum_records_count: Maximum records count
+        current_records_count: Current records count
+
+        collaborators_count: Collaborators count
+        webhooks_count: Webhooks count
+        calleds_count: Calleds count
+        fields_count: Fields count
+        proprietors_count: Proprietors count
+        facilitators_count: Facilitators count
+        vehicles_count: Vehicles count
+        tasks_count: Tasks count
+        archives_count: Archives count
+
+        collaborators: Collaborators
+        webhooks: Webhooks
+        calleds: Calleds
+        fields: Fields
+        proprietors: Proprietors
+        facilitators: Facilitators
+        vehicles: Vehicles
+        tasks: Tasks
+        archives: Archives
+    errors:
+      models:
+        subscription:
+          attributes:
+            user:
+              invalid_profile: Must be a standard
+
+  activemodel:
+    attributes:
+      subscriptions_filter:

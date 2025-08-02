@@ -1,0 +1,51 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        name: Nome
+        email: E-mail
+        encrypted_password: Senha criptografada
+        reset_password_token: Token de redefinição de senha
+        reset_password_sent_at: Data/hora de envio do token de redefinição de senha
+        remember_created_at: Data/hora de criação do cookie de "lembrar-me"
+        sign_in_count: Quantidade de logins
+        current_sign_in_at: Último login bem-sucedido
+        last_sign_in_at: Último login
+        current_sign_in_ip: IP do último login bem-sucedido
+        last_sign_in_ip: Último IP de login
+        confirmation_token: Token de confirmação
+        confirmed_at: Data/hora de confirmação
+        confirmation_sent_at: Data/hora de envio do token de confirmação
+        unconfirmed_email: E-mail não confirmado
+        failed_attempts: Tentativas de login sem sucesso
+        unlock_token: Token de desbloqueio de conta
+        locked_at: Data/hora de bloqueio da conta
+        profile: Perfil
+        status: Status
+        timezone: Timezone
+        locale: Locale
+        policy_terms: Eu li e concordo com os COOKIES, PRIVACY e TERMS
+        subscriptions_count: Quantidade de assinaturas
+        collaborations_count: Quantidade de colaborações
+    models:
+      user:
+        one: Usuário(a)
+        other: Usuários(as)
+  enums:
+    user:
+      timezone:
+        Brasilia: Brasilia
+        UTC: UTC
+      locale:
+        en: en
+        pt-BR: pt-BR
+      status:
+        created: Cadastrado
+        destroyed: Excluído
+      profile:
+        standard: Padrão
+        admin: Administrador(a)
+
+  activemodel:
+    attributes:
+      users_filter:

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+. devops/compose/.env
+
+ARG_LINUX_LOCALE=${ARG_LINUX_LOCALE} \
+ARG_USER_UID=${ARG_USER_UID} \
+ARG_USER_GID=${ARG_USER_GID} \
+ARG_PLATFORM=${ARG_PLATFORM} \
+ARG_NODE_VERSION=${ARG_NODE_VERSION} \
+ARG_NPM_VERSION=${ARG_NPM_VERSION} \
+DOCKER_DEFAULT_PLATFORM=${ARG_PLATFORM} \
+  docker compose down --remove-orphans --volumes --rmi=all

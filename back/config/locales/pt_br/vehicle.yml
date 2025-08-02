@@ -1,0 +1,27 @@
+pt-BR:
+  activerecord:
+    attributes:
+      vehicle:
+        chassis: Chassis
+        year: Ano
+        brand: Marca
+        model: Modelo
+        color: Cor
+        fuel: Combustível
+        category: Categoria
+        kind: Tipo
+        seats: Assentos
+        plate: Placa
+        renavam: Renavam
+        licensing: Licenciamento
+        notes: Notas
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+    models:
+      vehicle:
+        one: Veículo
+        other: Veículos
+
+  activemodel:
+    attributes:
+      vehicles_filter:

@@ -1,0 +1,18 @@
+config:
+  environments:
+    development:
+      target: http://dockerhost:3000
+    production:
+      target: https://ai4cod.com
+    alb:
+      target: https://ai4cod-286022308.us-east-1.elb.amazonaws.com
+      tls:
+        rejectUnauthorized: false
+  phases:
+    - duration: 255
+      arrivalRate: 150
+
+scenarios:
+  - flow:
+    - post:
+        url: /data/public/notificators/token/notifications

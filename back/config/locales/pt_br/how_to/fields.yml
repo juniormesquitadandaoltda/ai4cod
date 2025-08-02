@@ -1,0 +1,24 @@
+pt-BR:
+  how_to:
+    standard/fields:
+      index:
+        - 'Aqui você gerencia seus campos.'
+        - 'Você visualiza todos os seus campos, seus recursos, nomes e valores.'
+        - 'Você ordena ao clicar no título de cada coluna da tabela.'
+        - 'Você pesquisa por campos específicos na tab filtros.'
+        - 'Você clica nas ações "exibir" e "editar" de cada item na última coluna.'
+        - 'Você navega na tabela pela paginação abaixo dela.'
+      show:
+        - 'Nesta tela:'
+        - 'Você vê informações detalhadas sobre seu campo.'
+        - 'Você visualiza o recurso, nome e a lista de valores.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você atualiza os valores do seu campo.'
+        - 'Você adiciona, remove ou modifica os valores no campo.'
+        - 'Você reseta os dados quando quer desistir da atualização.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      create: []
+      update: []
+      destroy: []

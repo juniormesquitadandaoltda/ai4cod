@@ -1,0 +1,32 @@
+pt-BR:
+  how_to:
+    standard/tasks:
+      index:
+        - 'Aqui você pode gerenciar suas tarefas.'
+        - 'Você pode ver todas as suas tarefas, suas informações de nome, etapa, próxima etapa, agendamento, compartilhado e notas.'
+        - 'Você pode ordenar clicando no título de cada coluna da tabela.'
+        - 'Você pode buscar por tarefas específicas usando o filtro com opções para nome, etapa, pro, agendamento, compartilhado e notas.'
+        - 'Você pode clicar nas ações "visualizar," "editar" e "excluir" para cada item na última coluna.'
+        - 'Você navega pela tabela usando a paginação abaixo dela.'
+        - 'Você clica no link "novo" para criar uma nova tarefa.'
+      show:
+        - 'Nesta tela:'
+        - 'Você pode ver as informações detalhadas da sua tarefa.'
+        - 'Você pode ver o nome, etapa, próxima etapa, agendamento, compartilhado e notas.'
+        - 'Você pode clicar no link "voltar" para voltar para a tela principal.'
+      new:
+        - 'Nesta tela:'
+        - 'Você pode criar uma nova tarefa.'
+        - 'Você precisa fornecer nome, etapa, próxima etapa, agendamento, compartilhado e notas.'
+        - 'O agendamento deve ser em formato YYYY/MM/DD.'
+        - 'Você pode resetar os dados quando quiser cancelar a criação.'
+        - 'Você pode clicar no link "voltar" para voltar para a tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você pode atualizar os detalhes da sua tarefa.'
+        - 'Você pode modificar nome, etapa, próxima etapa, agendamento, compartilhado e notas.'
+        - 'Você pode resetar os dados quando quiser cancelar a atualização.'
+        - 'Você pode clicar no link "voltar" para voltar para a tela principal.'
+      create: []
+      update: []
+      destroy: []

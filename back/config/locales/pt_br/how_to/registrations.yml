@@ -1,0 +1,10 @@
+pt-BR:
+  how_to:
+    login/registrations:
+      edit:
+        - 'Aqui você vê alguns dados da sua conta.'
+        - 'Você atualiza alguns dados da sua conta.'
+        - 'Você cancela a sua conta.'
+        - 'Você clica no menu "sessão" para acessar a tela principal.'
+      update: []
+      destroy: []

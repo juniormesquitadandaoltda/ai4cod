@@ -1,0 +1,23 @@
+en:
+  activerecord:
+    models:
+      collaborator:
+        one: Collaborator
+        other: Collaborators
+    attributes:
+      collaborator:
+        actived: Actived?
+        user: User
+        user_id: User ID
+        subscription: Subscription
+        subscription_id: Subscription ID
+    errors:
+      models:
+        collaborator:
+          attributes:
+            user:
+              other_than: Must be different from subscription's user
+              invalid_profile: Must be a standard
+  activemodel:
+    attributes:
+      collaborators_filter:

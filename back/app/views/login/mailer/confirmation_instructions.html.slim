@@ -1,0 +1,27 @@
+p
+  = t('.greeting', recipient: @resource.name)
+
+- t('.instruction').each do |instruction|
+  p = instruction
+
+p
+  textarea#password cols=50 rows=12 readonly=""
+    = @resource.generate_temp_password
+
+button#copy onclick="copyToClipboard()" = t('.copy')
+
+javascript:
+  function copyToClipboard() {
+    const textarea = document.getElementById('password');
+    const button = document.getElementById('copy');
+    const originalText = button.textContent;
+
+    textarea.select();
+    document.execCommand('copy');
+
+    button.textContent = "#{t('.copied')}";
+
+    setTimeout(function() {
+      button.textContent = originalText;
+    }, 500);
+  }

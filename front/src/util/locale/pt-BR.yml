@@ -1,0 +1,157 @@
+views:
+  index:
+    title: Listando ${title}
+    sort: Ordenar
+    reset: Resetar
+    search: Pesquisar
+    tab:
+      table: Listagem
+      filter: Filtros
+    see_previous_job: Ver a anterior
+    see_next_job: Ver a próxima
+    see_apply_form: Abrir a inscrição
+    close_apply_form: Fechar a inscrição
+    share_link: Compartilhar
+    link_copied: Link copiado
+    see_post: Acessar a postagem externa dessa vaga
+  show:
+    title: Exibindo ${title}
+    see_previous_job: Ver a anterior
+    see_next_job: Ver a próxima
+    see_apply_form: Abrir a inscrição
+    close_apply_form: Fechar a inscrição
+    share_link: Compartilhar
+    link_copied: Link copiado
+    see_post: Acessar a postagem externa dessa vaga
+  new:
+    title: Novo(a) ${title}
+    reset: Resetar
+    submit: Criar
+  edit:
+    title: Editando ${title}
+    reset: Resetar
+    submit: Atualizar
+  reference:
+    title: Selecionando ${title}
+    sort: Ordenar
+    reset: Resetar
+    search: Pesquisar
+    current: Atual
+    select: Selecionar
+    clear: Limpar
+    close: Fechar
+    tab:
+      table: Listagem
+      filter: Filtros
+  session:
+    title: Editando ${title}
+    reset: Resetar
+    submit: Atualizar
+  blog:
+    index:
+      title: Blog
+    show:
+      title: Blog
+      see_more_posts: Ver mais postagens
+      share_link: Compartilhar link
+      link_copied: Link copiado
+  home:
+    title: Gerencie suas tarefas de ia em
+    title_mark: qualquer lugar
+    subtitle: Pesquise por sua Cidade - UF e clique nela para acessar a página
+    click: Clique aqui
+    instruction: para iniciar suas tarefas
+    instruction_map: Clique no mapa para ver as cidades por estado
+    header: Vagas e oportunidades em ${name}
+    wellcome: para ver mais cidades
+    telegram: para ver nosso Telegram
+    linkedin: para ver nosso Linkedin
+    resume: "${name}\n+${count} vagas e oportunidades\nClique aqui"
+    clear_filter: Tem certeza em limpar a pesquisa?
+filter:
+  title:
+    is: '='
+    in: '%'
+    gt: '>'
+    lt: '<'
+    gte: '>='
+    lte: '<='
+  option:
+    all: Todos
+    yes: Sim
+    no: Não
+    blank: Em branco
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: ','
+  pagination:
+    page: Página
+    of: de
+    results: resultados
+    previous: Anterior
+    next: Próximo
+input:
+  option:
+    all: Todos
+    yes: Sim
+    no: Não
+    blank: Em branco
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: ','
+  cookies: Cookies
+  privacy: Privacidade
+  terms: Termos
+output:
+  option:
+    all: Todos
+    yes: Sim
+    no: Não
+    blank: Em branco
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: ','
+cell:
+  option:
+    all: Todos
+    yes: Sim
+    no: Não
+    blank: Em branco
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: ','
+layouts:
+  application:
+    error:
+      404:
+        title: Algo está faltando.
+        description: Desculpe, não conseguimos encontrar essa página. Você encontrará muito para explorar na página inicial.
+      500:
+        title: Erro interno do servidor.
+        description: Já estamos trabalhando para resolver o problema.
+      back_home: Voltar para a Home
+      back_session: Voltar para a Sessão
+    popup:
+      confirm: Confirmar
+      exit: Fechar
+    cookies_policy: Política de Cookies
+    cookies_policy_description_1: 'Utilizamos cookies essenciais e tecnologias semelhantes de acordo com a nossa '
+    cookies_policy_description_2: ' e, ao continuar navegando, você concorda com estas condições.'
+    cookies_policy_button: Eu li e concordo
+    privacy_policy: Política de Privacidade e Proteção de Dados
+    use_terms: Termos de Uso
+    footer: Todos os direitos reservados © ${title}
+    release: v0.0.0
+    how_to: Você precisa de ajuda? Clique aqui.

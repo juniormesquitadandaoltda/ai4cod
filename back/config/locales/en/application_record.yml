@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    attributes:
+      application_record:
+        id: ID
+        uuid: UUID
+        destroyed_at: Destroyed
+        created_at: Created
+        updated_at: Updated
+
+        store_at: Datetime
+        store_reason: Reason
+        store_value: Value
+
+  errors:
+    messages:
+      subscription_due_date: Expired at %{value}
+      subscription_current_records_count: You reached the limit of %{value} records

@@ -1,0 +1,23 @@
+pt-BR:
+  activerecord:
+    models:
+      collaborator:
+        one: Colaborador(a)
+        other: Colaboradores(as)
+    attributes:
+      collaborator:
+        actived: Ativado?
+        user: Usuário(a)
+        user_id: Usuário(a) ID
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+    errors:
+      models:
+        collaborator:
+          attributes:
+            user:
+              other_than: Deve ser diferente do usuário(a) da assinatura.
+              invalid_profile: Deve ser um padrão.
+  activemodel:
+    attributes:
+      collaborators_filter:

@@ -1,0 +1,19 @@
+pt-BR:
+  how_to:
+    standard/audits:
+      index:
+        - 'Aqui você pode visualizar todas as auditorias das atividades da sua assinatura.'
+        - 'Você vê quem fez mudanças, o que foi alterado e quando.'
+        - 'Você ordena ao clicar no título de cada coluna da tabela.'
+        - 'Você pesquisa por auditorias específicas na tab filtros.'
+        - 'Você clica na ação "exibir" de cada item na última coluna.'
+        - 'Você navega na tabela pela paginação abaixo dela.'
+      show:
+        - 'Nesta tela:'
+        - 'Você vê informações detalhadas sobre uma auditoria específica.'
+        - 'Você visualiza as alterações exatas que foram feitas.'
+        - 'Você vê quem fez as alterações e quando elas foram feitas.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      create: []
+      update: []
+      destroy: []

@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    attributes:
+      called:
+        subject: Subject
+        message: Message
+        subscription: Subscription
+        subscription_id: Subscription ID
+    models:
+      called:
+        one: Called
+        other: Calleds
+
+  activemodel:
+    attributes:
+      calleds_filter:

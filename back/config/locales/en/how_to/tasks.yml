@@ -1,0 +1,31 @@
+en:
+  how_to:
+    standard/tasks:
+      index:
+        - 'Here you can manage your tasks.'
+        - 'You can see all your tasks, their name, stage, next_stage, scheduling, shared, and notes information.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for specific tasks using the filters tab with options for name, stage, next_stage, scheduling, shared, and notes.'
+        - 'You can click on the "view," "edit," and "delete" actions for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+        - 'You click on the "new" link to create a new task.'
+      show:
+        - 'On this screen:'
+        - 'You can view detailed information about your task.'
+        - 'You can see the name, stage, next_stage, scheduling, shared, and any notes provided.'
+        - 'You can click on the "list" link to return to the main screen.'
+      new:
+        - 'On this screen:'
+        - 'You can create a new task.'
+        - 'You need to provide name, stage, next_stage, scheduling, shared, and notes.'
+        - 'You can reset the data when you want to cancel the creation.'
+        - 'You can click on the "list" link to return to the main screen.'
+      edit:
+        - 'On this screen:'
+        - 'You can update the details of your task.'
+        - 'You can modify name, stage, next_stage, scheduling, shared, and notes.'
+        - 'You can reset the data when you want to cancel the update.'
+        - 'You can click on the "list" link to return to the main screen.'
+      create: []
+      update: []
+      destroy: []

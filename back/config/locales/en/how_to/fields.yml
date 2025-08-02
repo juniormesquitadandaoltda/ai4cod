@@ -1,0 +1,24 @@
+en:
+  how_to:
+    standard/fields:
+      index:
+        - 'Here you can manage your fields.'
+        - 'You can see all your fields, their resources, names, and values.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for specific fields using the filters tab.'
+        - 'You can click on the "view" and "edit" actions for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+      show:
+        - 'On this screen:'
+        - 'You can view detailed information about your field.'
+        - 'You can see the resource, name, and the list of values.'
+        - 'You can click on the "list" link to return to the main screen.'
+      edit:
+        - 'On this screen:'
+        - 'You can update the values of your field.'
+        - 'You can add, remove, or modify the values in the field.'
+        - 'You can reset the data when you want to cancel the update.'
+        - 'You can click on the "list" link to return to the main screen.'
+      create: []
+      update: []
+      destroy: []

@@ -1,0 +1,51 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        name: Name
+        email: Email
+        encrypted_password: Password
+        reset_password_token: Reset password token
+        reset_password_sent_at: Reset password sent at
+        remember_created_at: Remember created at
+        sign_in_count: Sign in count
+        current_sign_in_at: Current sign in at
+        last_sign_in_at: Last sign in at
+        current_sign_in_ip: Current sign in ip
+        last_sign_in_ip: Last sign in ip
+        confirmation_token: Confirmation token
+        confirmed_at: Confirmed at
+        confirmation_sent_at: Confirmation sent at
+        unconfirmed_email: Unconfirmed email
+        failed_attempts: Failed attempts without success
+        unlock_token: Unlock token
+        locked_at: Locked at
+        profile: Profile
+        status: Status
+        timezone: Timezone
+        locale: Locale
+        policy_terms: I've read and agree with COOKIES, PRIVACY, and TERMS
+        subscriptions_count: Subscriptions count
+        collaborations_count: Collaborations count
+    models:
+      user:
+        one: User
+        other: Users
+  enums:
+    user:
+      timezone:
+        Brasilia: Brasilia
+        UTC: UTC
+      locale:
+        en: en
+        pt-BR: pt-BR
+      status:
+        created: Created
+        destroyed: Destroyed
+      profile:
+        standard: Standard
+        admin: Admin
+
+  activemodel:
+    attributes:
+      users_filter:

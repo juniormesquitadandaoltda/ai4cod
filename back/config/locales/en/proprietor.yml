@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    attributes:
+      proprietor:
+        name: Name
+        email: Email
+
+        tasks: Tasks
+    models:
+      proprietor:
+        one: Proprietor
+        other: Proprietors
+
+  activemodel:
+    attributes:
+      proprietors_filter:

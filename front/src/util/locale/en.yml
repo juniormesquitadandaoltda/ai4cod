@@ -1,0 +1,158 @@
+views:
+  index:
+    title: Listing ${title}
+    sort: Sort
+    reset: Reset
+    search: Search
+    tab:
+      table: Listing
+      filter: Filters
+    see_previous_jobs: See previous
+    see_next_jobs: See next
+    see_apply_form: Open apply
+    close_apply_form: Close apply
+    share_link: Share
+    link_copied: Link copied
+    see_post: Access the external posting of this job
+  show:
+    title: Showing ${title}
+    see_previous_jobs: See previous
+    see_next_jobs: See next
+    see_apply_form: Open apply
+    close_apply_form: Close apply
+    share_link: Share
+    link_copied: Link copied
+    see_post: Access the external posting of this job
+  new:
+    title: New ${title}
+    reset: Reset
+    submit: Create
+  edit:
+    title: Editing ${title}
+    reset: Reset
+    submit: Update
+  reference:
+    title: Selecting ${title}
+    sort: Sort
+    reset: Reset
+    search: Search
+    current: Current
+    select: Select
+    clear: Clear
+    close: Close
+    tab:
+      table: Listing
+      filter: Filters
+  session:
+    title: Editing ${title}
+    reset: Reset
+    submit: Update
+  blog:
+    index:
+      title: Blog
+    show:
+      title: Blog
+      see_apply_form: See apply form
+      close_apply_form: Close apply form
+      share_link: Share link
+      link_copied: Link copied
+  home:
+    title: Manage your tasks of documentalist dispatcher in
+    title_mark: any place
+    subtitle: Search for your City - State and click on it to access the page
+    click: Click here
+    instruction: to create your free job, opportunity, and career page
+    instruction_map: Click on the map to see cities by state
+    header: Jobs and opportunities in ${name}
+    wellcome: to see more cities
+    telegram: to see our Telegram
+    linkedin: to see our Linkedin
+    resume: "${name}\n+${count} jobs e opportunities\nClick here"
+    clear_filter: Are you sure about clearing the search?
+filter:
+  title:
+    is: '='
+    in: '%'
+    gt: '>'
+    lt: '<'
+    gte: '>='
+    lte: '<='
+  option:
+    all: All
+    yes: 'Yes'
+    no: 'No'
+    blank: Blank
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: .
+  pagination:
+    page: Page
+    of: of
+    results: results
+    previous: Previous
+    next: Next
+input:
+  option:
+    all: All
+    yes: 'Yes'
+    no: 'No'
+    blank: Blank
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: .
+  cookies: Cookies
+  privacy: Privacy
+  terms: Terms
+output:
+  option:
+    all: All
+    yes: 'Yes'
+    no: 'No'
+    blank: Blank
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: .
+cell:
+  option:
+    all: All
+    yes: 'Yes'
+    no: 'No'
+    blank: Blank
+  mask:
+    date: 99/99/9999
+    time: 99:99:99
+    datetime: 99/99/9999 99:99:99
+    timestamp: 99/99/9999 99:99:99
+    decimal: .
+layouts:
+  application:
+    error:
+      404:
+        title: Something's missing.
+        description: Sorry, we can't find that page. You'll find lots to explore on the home page.
+      500:
+        title: Internal Server Error.
+        description: We are already working to solve the problem.
+      back_home: Back to Home
+      back_session: Back to Session
+    popup:
+      confirm: Confirm
+      exit: Close
+    cookies_policy: Cookies Policy
+    cookies_policy_description_1: 'We use essential cookies and similar technologies in accordance with our '
+    cookies_policy_description_2: ' and, by continuing to browse, you agree to these conditions.'
+    cookies_policy_button: I've read and agree
+    privacy_policy: Privacy Policy and Data Protection
+    use_terms: Terms of Use
+    footer: All rights reserved © ${title}
+    release: v0.0.0
+    how_to: You need help? Click here.

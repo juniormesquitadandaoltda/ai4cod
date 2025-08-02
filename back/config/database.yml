@@ -1,0 +1,33 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['POSTGRESQL_HOST'] %>
+  port: <%= ENV['POSTGRESQL_PORT'] %>
+  pool: <%= ENV['RAILS_MAX_THREADS'] || ENV['WORKER_CONCURRENCY'] || '1' %>
+  username: <%= ENV['POSTGRESQL_USERNAME_FULL'] || ENV['POSTGRESQL_USERNAME'] %>
+  password: <%= ENV['POSTGRESQL_PASSWORD_FULL'] || ENV['POSTGRESQL_PASSWORD'] %>
+  database: <%= ENV.fetch('POSTGRESQL_DATABASE'){ "ai4cod_#{ENV['RAILS_ENV']}" } %>
+  prepared_statements: <%= ENV.fetch('POSTGRESQL_PREPARED_STATEMENTS', 'false') == 'true' %>
+  idle_timeout: <%= ENV.fetch('POSTGRESQL_IDLE_TIMEOUT', '1').to_i %>
+  variables:
+    statement_timeout: <%= ENV.fetch('POSTGRESQL_STATEMENT_TIMEOUT', '60') %>s
+    idle_in_transaction_session_timeout: <%= ENV.fetch('POSTGRESQL_IDLE_SESSION_TIMEOUT', '60') %>s
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: ai4cod_test
+
+playground:
+  <<: *default
+  sslmode: require
+
+sandbox:
+  <<: *default
+  sslmode: require
+
+production:
+  <<: *default
+  sslmode: require

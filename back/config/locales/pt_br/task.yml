@@ -1,0 +1,26 @@
+pt-BR:
+  activerecord:
+    attributes:
+      task:
+        name: Nome
+        stage: Etapa
+        next_stage: Próxima
+        scheduling_at: Agendamento
+        shared: Compartilhado?
+        notes: Notas
+        vehicle: Veículo
+        vehicle_id: Veículo ID
+        facilitator: Facilitador
+        facilitator_id: Facilitador ID
+        proprietor: Proprietário
+        proprietor_id: Proprietário ID
+        subscription: Assinatura
+        subscription_id: Assinatura ID
+    models:
+      task:
+        one: Tarefa
+        other: Tarefas
+
+  activemodel:
+    attributes:
+      tasks_filter:

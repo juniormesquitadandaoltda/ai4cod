@@ -1,0 +1,32 @@
+en:
+  how_to:
+    standard/vehicles:
+      index:
+        - 'Here you can manage your vehicles.'
+        - 'You can see all your vehicles, their chassis, year, seats, plate, renavam, and licensing information.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for specific vehicles using the filters tab with options for chassis, year, plate, renavam, and licensing.'
+        - 'You can click on the "view," "edit," and "delete" actions for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+        - 'You click on the "new" link to create a new vehicle.'
+      show:
+        - 'On this screen:'
+        - 'You can view detailed information about your vehicle.'
+        - 'You can see the chassis, brand, model, year, color, fuel, category, kind, seats, plate, renavam, licensing, and any notes provided.'
+        - 'You can click on the "list" link to return to the main screen.'
+      new:
+        - 'On this screen:'
+        - 'You can create a new vehicle.'
+        - 'You need to provide chassis, brand, model, year, color, fuel, category, kind, and seats.'
+        - 'The year and licensing must be in YYYY/YYYY format.'
+        - 'You can reset the data when you want to cancel the creation.'
+        - 'You can click on the "list" link to return to the main screen.'
+      edit:
+        - 'On this screen:'
+        - 'You can update the details of your vehicle.'
+        - 'You can modify chassis, brand, model, year, color, fuel, category, kind, seats, plate, renavam, licensing, and notes.'
+        - 'You can reset the data when you want to cancel the update.'
+        - 'You can click on the "list" link to return to the main screen.'
+      create: []
+      update: []
+      destroy: []

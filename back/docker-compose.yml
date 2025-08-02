@@ -1,0 +1,85 @@
+name: ai4cod_back
+services:
+  app:
+    image: ai4cod_back
+    build:
+      args:
+        ARG_PLATFORM: ${ARG_PLATFORM}
+        ARG_LINUX_LOCALE: ${ARG_LINUX_LOCALE}
+        ARG_USER_UID: ${ARG_USER_UID}
+        ARG_USER_GID: ${ARG_USER_GID}
+        ARG_RUBY_VERSION: ${ARG_RUBY_VERSION}
+        ARG_BUNDLER_VERSION: ${ARG_BUNDLER_VERSION}
+      context: .
+    depends_on:
+      - postgresql
+      - redis
+      - localstack
+    working_dir: /home/user/ai4cod/back
+    environment:
+      BINDING: 0.0.0.0
+      PORT: 3000
+      SECRET_KEY_BASE: 42a80087d1134231e6edae026253ed5b68646d74df0833b6ca994a728559280fcd4251bfee4c78302438632155fa865b3d86eb7ff30d80c174345346822478b4
+
+      POSTGRESQL_USERNAME_FULL: user_full
+      POSTGRESQL_PASSWORD_FULL: password_full
+      POSTGRESQL_USERNAME: username
+      POSTGRESQL_PASSWORD: password
+      POSTGRESQL_HOST: postgresql
+      POSTGRESQL_PORT: 5432
+
+      REDIS_URL: redis://:@redis:6379
+
+      STORAGE_ACCESS_KEY_ID: test
+      STORAGE_SECRET_ACCESS_KEY: test
+      STORAGE_REGION: us-east-1
+      STORAGE_BUCKET: ai4cod
+      STORAGE_ENDPOINT: http://localstack:4566
+
+      RAILS_MAX_THREADS: 5
+      RAILS_ENV: development
+    extra_hosts:
+      - dockerhost:host-gateway
+    ports:
+      - 3004:3000
+      - 8084:80
+      - 4444:443
+    tty: true
+    volumes:
+      - app:/usr/local
+      - ~/.ssh:/home/user/.ssh
+      - ~/.gitconfig:/home/user/.gitconfig
+      - ~/.bash_history:/home/user/.bash_history
+      - ./devops/nginx/data:/etc/nginx
+      - ./../:/home/user/ai4cod
+    deploy:
+      resources:
+        limits:
+          cpus: 1.99
+          memory: 2999M
+  postgresql:
+    image: postgres:17.5
+    environment:
+      POSTGRES_USER: user_full
+      POSTGRES_PASSWORD: password_full
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  redis:
+    image: redis:7.0.10
+    ports:
+      - 6379:6379
+  localstack:
+    image: localstack/localstack:4.5.0
+    ports:
+      - 4566:4566
+    environment:
+      DEFAULT_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+    volumes:
+      - ./devops/localstack/init-s3.py:/etc/localstack/init/ready.d/init-s3.py
+volumes:
+  app:
+  postgresql:

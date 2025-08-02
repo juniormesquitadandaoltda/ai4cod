@@ -1,0 +1,33 @@
+en:
+  activerecord:
+    attributes:
+      field:
+        name: Name
+        resource: Resource
+        values: Values
+        subscription: Subscription
+        subscription_id: Subscription ID
+
+        tasks: Tasks
+        vehicles: Vehicles
+    models:
+      field:
+        one: Field
+        other: Fields
+  enums:
+    field:
+      resource:
+        task: Tarefa
+        vehicle: Veículo
+      name:
+        stage: Stage
+        brand: Brand
+        model: Model
+        color: Color
+        fuel: Fuel
+        category: Category
+        kind: Kind
+
+  activemodel:
+    attributes:
+      fields_filter:

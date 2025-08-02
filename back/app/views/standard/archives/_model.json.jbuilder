@@ -1,0 +1,13 @@
+model = @model || controller.class::MODEL.new
+
+json.model do
+  json.extract! model, :id, :filename, :byte_size
+
+  json.record do
+    json.id model.record_id || params[:record_id]
+    json.type model.record_type || params[:record_type]
+  end
+
+  json.created_at model.created_at&.to_api
+  json.updated_at model.updated_at&.to_api
+end

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind utils;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+  table {
+    display: inline-table !important;
+  }
+
+  thead tr:not(:first-child) {
+    display: none !important;
+  }
+}

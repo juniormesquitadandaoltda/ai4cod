@@ -1,0 +1,46 @@
+pt-BR:
+  activerecord:
+    models:
+      subscription:
+        one: Assinatura
+        other: Assinaturas
+    attributes:
+      subscription:
+        actived: Ativada?
+        name: Nome
+        user: Usuário
+        due_date: Data de vencimento
+        user_id: Usuário(a) ID
+        maximum_records_count: Limite de registros
+        current_records_count: Quantidade de registros atuais
+
+        collaborators_count: Quantidade de colaboradores
+        webhooks_count: Quantidade de webhooks
+        calleds_count: Quantidade de chamados
+        fields_count: Quantidade de campos
+        proprietors_count: Quantidade de proprietários
+        facilitators_count: Quantidade de facilitadores
+        vehicles_count: Quantidade de veículos
+        tasks_count: Quantidade de tarefas
+        archives_count: Quantidade de arquivos
+
+        collaborators: Colaboradores
+        webhooks: Webhooks
+        calleds: Chamados
+        fields: Campos
+        proprietors: Proprietários
+        facilitators: Facilitadores
+        vehicles: Veículos
+        tasks: Tarefas
+        archives: Arquivos
+
+    errors:
+      models:
+        subscription:
+          attributes:
+            user:
+              invalid_profile: Deve ser um padrão.
+
+  activemodel:
+    attributes:
+      subscriptions_filter:

@@ -1,0 +1,31 @@
+pt-BR:
+  how_to:
+    standard/facilitators:
+      index:
+        - 'Aqui você gerencia seus facilitadores.'
+        - 'Você visualiza todos os seus facilitadores, seus nomes, emails e observações.'
+        - 'Você ordena ao clicar no título de cada coluna da tabela.'
+        - 'Você pesquisa por facilitadores específicos na tab filtros.'
+        - 'Você clica nas ações "exibir", "editar" e "excluir" de cada item na última coluna.'
+        - 'Você navega na tabela pela paginação abaixo dela.'
+        - 'Você clica no link "novo", para criar um novo facilitador.'
+      show:
+        - 'Nesta tela:'
+        - 'Você vê informações detalhadas sobre seu facilitador.'
+        - 'Você visualiza o nome, email e quaisquer observações fornecidas.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      new:
+        - 'Nesta tela:'
+        - 'Você cria um novo facilitador.'
+        - 'Você preenche o nome, email e observações opcionais.'
+        - 'Você reseta os dados quando quer desistir da criação.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você atualiza os detalhes do seu facilitador.'
+        - 'Você modifica o nome, email e observações.'
+        - 'Você reseta os dados quando quer desistir da atualização.'
+        - 'Você clica no link "listagem", para retornar à tela principal.'
+      create: []
+      update: []
+      destroy: []

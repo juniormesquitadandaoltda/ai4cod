@@ -1,0 +1,33 @@
+en:
+  how_to:
+    standard/webhooks:
+      index:
+        - 'Here you can manage your webhooks.'
+        - 'You can see all your webhooks, their URLs, resources, events, and status.'
+        - 'You can sort by clicking on the title of each table column.'
+        - 'You can search for specific webhooks using the filters tab.'
+        - 'You can click on the "view," "edit," and "delete" actions for each item in the last column.'
+        - 'You navigate the table using the pagination below it.'
+        - 'You click on the "new" link to create a new webhook.'
+      show:
+        - 'On this screen:'
+        - 'You can view detailed information about your webhook.'
+        - 'You can see the URL, resource, event, and whether it is actived.'
+        - 'You can also see request metadata and tracking information.'
+        - 'You can click on the "list" link to return to the main screen.'
+      new:
+        - 'On this screen:'
+        - 'You can create a new webhook.'
+        - 'You need to provide a URL, select a resource and an event type.'
+        - 'You can activate or deactivate the webhook.'
+        - 'You can reset the data when you want to cancel the creation.'
+        - 'You can click on the "list" link to return to the main screen.'
+      edit:
+        - 'On this screen:'
+        - 'You can update the details of your webhook.'
+        - 'You can modify the URL, resource, event, and actived status.'
+        - 'You can reset the data when you want to cancel the update.'
+        - 'You can click on the "list" link to return to the main screen.'
+      create: []
+      update: []
+      destroy: []

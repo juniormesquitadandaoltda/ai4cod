@@ -1,0 +1,94 @@
+### Create a file fallback.js for your development environment
+
+```js
+(function () {
+  const searchParams = new URL(document.currentScript.src).searchParams
+
+  var banner = document.createElement("div")
+  banner.style.width = (searchParams.get('width') || '728') + 'px'
+  banner.style.height = (searchParams.get('height') || '90') + 'px'
+  banner.style.backgroundColor = "#f0f0f0"
+  banner.style.border = "1px solid #ccc"
+  banner.style.fontSize = "16px"
+  banner.style.color = "#999"
+  banner.textContent = "Ads"
+  banner.style.display = "flex"
+  banner.style['justify-content'] = "center"
+  banner.style['align-items'] = "center"
+
+  document.currentScript.parentElement.appendChild(banner)
+})();
+```
+
+### Create a react component adsterra.js
+
+```js
+import { Component } from 'react'
+
+export default class Adsterra extends Component {
+  componentDidMount = _ => setTimeout(async ()=>{
+    const ids = [
+      'container-00000000000000000000000000000000',
+      'banner-468x60',
+      'banner-320x50',
+      'banner-728x90',
+      'banner-300x250',
+      'banner-160x300',
+      'banner-160x600'
+    ]
+
+    for (const id of ids) {
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      this.add(id)
+    }
+
+    delete window.atOptions
+  }, 0)
+
+  add = (id) => {
+    let width = 1300
+    let height = 250
+    if(id.includes('banner')) {
+      width = parseInt(id.split('-')[1].split('x')[0])
+      height = parseInt(id.split('-')[1].split('x')[1])
+    }
+
+    const fallback = `${fallback}?width=${width}&height=${height}`
+    const production = window.location.host.includes('yourdomain')
+
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = {
+      'container-00000000000000000000000000000000': production ? 'https://pl00000000.highcpmrevenuegate.com/00000000000000000000000000000000/invoke.js' : fallback,
+      'banner-468x60': production ? 'https://www.profitablecreativeformat.com/00000000000000000000000000000001/invoke.js' : fallback,
+      'banner-320x50': production ? 'https://www.profitablecreativeformat.com/00000000000000000000000000000002/invoke.js' : fallback,
+      'banner-728x90': production ? 'https://www.profitablecreativeformat.com/00000000000000000000000000000003/invoke.js' : fallback,
+      'banner-300x250': production ? 'https://www.profitablecreativeformat.com/00000000000000000000000000000004/invoke.js' : fallback,
+      'banner-160x300': production ? 'https://www.profitablecreativeformat.com/00000000000000000000000000000005/invoke.js' : fallback,
+      'banner-160x600': production ? 'https://www.profitablecreativeformat.com/00000000000000000000000000000006/invoke.js' : fallback
+    }[id]
+
+    window.atOptions = {
+      key: `${script.src.split('.com/')[1]}`.split('/')[0],
+      format: 'iframe',
+      width,
+      height,
+      params: {}
+    };
+
+    document.getElementById(id).append(script)
+  };
+
+  render = _ => (
+    <>
+      <div id="container-00000000000000000000000000000000" />
+      <div id="banner-468x60" />
+      <div id="banner-320x50" />
+      <div id="banner-728x90" />
+      <div id="banner-160x300" />
+      <div id="banner-300x250" />
+      <div id="banner-160x600" />
+    </>
+  )
+}
+```

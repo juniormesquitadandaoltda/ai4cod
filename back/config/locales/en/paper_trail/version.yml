@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    models:
+      paper_trail/version:
+        one: Version
+        other: Versions
+    attributes:
+      paper_trail/version:
+        item_id: Item ID
+        item_type: Item Type
+        event: Event
+        object: Object
+        object_changes: Object Changes
+        whodunnit: Author
+        whodunnit_id: Author ID
+        owner: Owner
+        owner_id: Owner ID
+
+  activemodel:
+    attributes:
+      paper_trail/versions_filter:

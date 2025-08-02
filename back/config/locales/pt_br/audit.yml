@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    attributes:
+      audit:
+    models:
+      audit:
+        one: Auditoria
+        other: Auditorias
+
+  activemodel:
+    attributes:
+      audits_filter:

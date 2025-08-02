@@ -1,0 +1,39 @@
+pt-BR:
+  view:
+    path:
+      index:
+        title: Listagem
+      show:
+        title: Exibir
+      new:
+        title: Novo(a)
+      edit:
+        title: Editar
+      create:
+        title: Cadastrar
+      update:
+        title: Atualizar
+      personificate:
+        title: Personificar
+        message: Personificar id %{id}?
+      destroy:
+        title: Excluir
+        message: Excluir id %{id}?
+      export:
+        title: Exportar
+        message: Exportar tudo cadastrado até agora?
+      logout:
+        title: Logout
+        message: Você tem certeza?
+      preview:
+        title: Pré-visualizar
+      index_archives:
+        title: Arquivos
+      new_archives:
+        title: Novo(a) arquivo
+    page:
+      session:
+        title: Sessão
+    public:
+      not_found: A página %{subdomain} está disponível. Clique em 'Sair' e faça login para reservar.
+      unprocessable_entity: A página %{subdomain} está sendo aprovada. Clique em 'Sair' e faça login para reservar outra.

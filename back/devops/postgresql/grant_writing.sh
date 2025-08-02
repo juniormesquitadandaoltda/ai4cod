@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+echo 'grant writing'
+
+PGPASSWORD=$POSTGRESQL_PASSWORD_FULL psql \
+  --username=$POSTGRESQL_USERNAME_FULL \
+  --host=$POSTGRESQL_HOST \
+  --port=$POSTGRESQL_PORT \
+  --dbname="ai4cod_${RAILS_ENV}" \
+  --command="
+    GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO \"${POSTGRESQL_USERNAME}\";
+    GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO \"${POSTGRESQL_USERNAME}\";
+  "

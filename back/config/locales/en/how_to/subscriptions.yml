@@ -1,0 +1,8 @@
+en:
+  how_to:
+    standard/subscriptions:
+      show:
+        - 'Here you can view some data of your current subscription.'
+        - 'You can see the name, email, and due date of your subscription.'
+        - 'You can click on the "list" link to return to the main screen.'
+      update: []

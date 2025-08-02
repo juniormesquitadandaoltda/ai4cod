@@ -1,0 +1,27 @@
+en:
+  activerecord:
+    attributes:
+      vehicle:
+        chassis: Chassis
+        year: Year
+        brand: Brand
+        model: Model
+        color: Color
+        fuel: Fuel
+        category: Category
+        kind: Kind
+        seats: Seats
+        plate: Plate
+        renavam: Renavam
+        licensing: Licensing
+        notes: Notes
+        subscription: Subscription
+        subscription_id: Subscription ID
+    models:
+      vehicle:
+        one: Vehicle
+        other: Vehicles
+
+  activemodel:
+    attributes:
+      vehicles_filter:

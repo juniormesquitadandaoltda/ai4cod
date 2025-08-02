@@ -1,0 +1,57 @@
+fields:
+  resource: string(task, ...), required, unique(subscription)
+  name: string(stage, ...), required, unique(resource, subscription)
+  kind: string, enum(enum, ...), required
+  values: array, optional
+  subscription: subscription, required
+
+proprietors:
+  name: string, required
+  email: string, required, unique(subscription)
+  notes: text
+  subscription: subscription, required
+
+facilitators:
+  name: string, required
+  email: string, required, unique
+  notes: text
+  subscription: subscription, required
+
+vehicles:
+  chassis: string, required, '9999', unique(subscription)
+  year: string, required, '2024/2025'  # Ano de modelo e ano de fabricação
+  brand: string, required, field_enum(Honda, ...)
+  model: string, required, field_enum(Gol, ...)
+  color: string, required, field_enum(Branco, ...)
+  fuel: string, required, field_enum(Gasolina, ...)  # Tipo de combustível
+  category: string, required, field_enum(Passeio, ...)
+  kind: string, required, field_enum(Carro, ...)  # Tipo de veículo (ex: Carro, Moto, etc.)
+  seats: integer, required, '5'  # Quantidade de assentos
+  plate: string, 'ABC12345'
+  renavam: string, '9999'
+  licensing: string, '2025/2026'  # Período de validade do licenciamento
+  notes: text, <= 1024
+  subscription: subscription, required
+
+tasks:
+  name: string, required, unique(subscription)
+  step: string, required
+  scheduling:  string, required
+  scheduling_at: datetime
+  vehicle: vehicle, required
+  shared: boolean, required, default(false)
+  proprietor: proprietor
+  facilitators: facilitator
+  notes: text, <= 1024
+  subscription: subscription, required
+
+exports:
+  resource: string, enum(task, ...), required
+  params: json, required
+  subscription: subscription, required
+
+archives:
+  record_type: string, enum(Task), required
+  record_id: bigint, required
+  filename: string, required
+  subscription: subscription, required

@@ -1,0 +1,26 @@
+en:
+  activerecord:
+    attributes:
+      task:
+        name: Name
+        stage: Stage
+        next_stage: Next
+        scheduling_at: Scheduling
+        shared: Shared?
+        notes: Notes
+        vehicle: Vehicle
+        vehicle_id: Vehicle ID
+        facilitator: Facilitator
+        facilitator_id: Facilitator ID
+        proprietor: Proprietor
+        proprietor_id: Proprietor ID
+        subscription: Subscription
+        subscription_id: Subscription ID
+    models:
+      task:
+        one: Task
+        other: Tasks
+
+  activemodel:
+    attributes:
+      tasks_filter:

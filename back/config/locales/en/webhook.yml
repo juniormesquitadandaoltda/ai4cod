@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    attributes:
+      webhook:
+        url: URL
+        actived: Actived?
+        resource: Resource
+        event: Event
+        request_metadata: Request Metadata
+        requests_count: Requests Count
+        requested_at: Requested
+        subscription: Subscription
+        subscription_id: Subscription ID
+    models:
+      webhook:
+        one: Webhook
+        other: Webhooks
+  enums:
+    webhook:
+      resource:
+        collaborator: Collaborator
+        page: Page
+        job: Job
+      event:
+        create: Create
+        update: Update
+        destroy: Destroy
+
+  activemodel:
+    attributes:
+      webhooks_filter:

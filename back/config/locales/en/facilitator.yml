@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    attributes:
+      facilitator:
+        name: Name
+        email: Email
+
+        tasks: Tasks
+    models:
+      facilitator:
+        one: Facilitator
+        other: Facilitators
+
+  activemodel:
+    attributes:
+      facilitators_filter:

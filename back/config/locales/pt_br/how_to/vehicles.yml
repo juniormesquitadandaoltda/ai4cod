@@ -1,0 +1,32 @@
+pt-BR:
+  how_to:
+    standard/vehicles:
+      index:
+        - 'Aqui você pode gerenciar seus veículos.'
+        - 'Você pode ver todos os seus veículos, suas informações de chassi, ano, assentos, placa, renavam e licenciamento.'
+        - 'Você pode ordenar clicando no título de cada coluna da tabela.'
+        - 'Você pode buscar por veículos específicos usando o filtro com opções para chassi, ano, placa, renavam e licenciamento.'
+        - 'Você pode clicar nas ações "visualizar," "editar" e "excluir" para cada item na última coluna.'
+        - 'Você navega pela tabela usando a paginação abaixo dela.'
+        - 'Você clica no link "novo" para criar um novo veículo.'
+      show:
+        - 'Nesta tela:'
+        - 'Você pode ver as informações detalhadas do seu veículo.'
+        - 'Você pode ver o chassi, marca, modelo, ano, cor, combustível, categoria, tipo, assentos, placa, renavam e licenciamento.'
+        - 'Você pode clicar no link "voltar" para voltar para a tela principal.'
+      new:
+        - 'Nesta tela:'
+        - 'Você pode criar um novo veículo.'
+        - 'Você precisa fornecer chassi, marca, modelo, ano, cor, combustível, categoria, tipo e assentos.'
+        - 'O ano e o licenciamento devem ser em formato YYYY/YYYY.'
+        - 'Você pode resetar os dados quando quiser cancelar a criação.'
+        - 'Você pode clicar no link "voltar" para voltar para a tela principal.'
+      edit:
+        - 'Nesta tela:'
+        - 'Você pode atualizar os detalhes do seu veículo.'
+        - 'Você pode modificar chassi, marca, modelo, ano, cor, combustível, categoria, tipo, assentos, placa, renavam, licenciamento e notas.'
+        - 'Você pode resetar os dados quando quiser cancelar a atualização.'
+        - 'Você pode clicar no link "voltar" para voltar para a tela principal.'
+      create: []
+      update: []
+      destroy: []
