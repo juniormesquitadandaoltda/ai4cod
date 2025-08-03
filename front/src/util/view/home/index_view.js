@@ -6,6 +6,7 @@ export default class IndexView extends ApplicationView {
     filter: {
       query: '',
     },
+    messages: [],
   }
 
   index = (_) => this.request(null)
@@ -33,18 +34,46 @@ export default class IndexView extends ApplicationView {
   )
 
   terminal = (_) => (
-    <div className='w-full h-screen bg-black text-green-400 font-mono flex flex-col items-center justify-center'>
-      <h1 className='text-center text-2xl mb-8'>AI for Code</h1>
-      <div className='flex items-center w-full px-4'>
+    <div className='w-full h-screen bg-black text-green-400 font-mono flex flex-col'>
+      <h1 className='text-center text-2xl py-8'>AI for Code</h1>
+
+      <div className='px-4 overflow-y-auto'>
+        {this.state.messages.map((msg, index) => (
+          <div key={index} className='mb-4'>
+            <div className='text-cyan-400'>Você: {msg.user}</div>
+            <div className='text-green-400'>AI: {msg.ai}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className='items-center w-full px-4 py-4'>
         <input
           ref={input => input && input.focus()}
           type='text'
           className='bg-transparent text-green-400 outline-none border-none font-mono w-full'
-          placeholder='💤 ...'
+          placeholder='...'
           autoFocus
           onBlur={(e) => e.target.focus()}
+          onKeyPress={(e) => e.key === 'Enter' && this.handleMessage(e.target.value)}
         />
       </div>
     </div>
   )
+
+  handleMessage = (text) => {
+    if (!text.trim()) return
+
+    const reversedText = text.split('').reverse().join('')
+
+    const newMessage = {
+      user: text,
+      ai: reversedText
+    }
+
+    this.setState({
+      messages: [...this.state.messages, newMessage]
+    })
+
+    document.querySelector('input').value = ''
+  }
 }
