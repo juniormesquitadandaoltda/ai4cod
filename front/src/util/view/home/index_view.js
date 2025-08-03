@@ -10,7 +10,9 @@ export default class IndexView extends ApplicationView {
     isCopying: false,
   }
 
-  index = (_) => this.request(null)
+  index = (_) => this.request(null, () => {
+    this.layout().setState({ hidden: true })
+  })
 
   init = (_) => {
     if (window.location.pathname === '/') {
