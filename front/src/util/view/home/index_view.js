@@ -35,8 +35,8 @@ export default class IndexView extends ApplicationView {
 
   terminal = (_) => (
     <div className='w-full h-screen bg-black text-green-400 font-mono flex flex-col'>
-      <h1 className='text-center text-2xl py-8 flex items-center justify-center gap-3'>
-        <img src='/favicon.svg' alt='AI4COD' width='32' height='32' />
+      <h1 className='text-center text-4xl py-8 flex items-center justify-center gap-3'>
+        <img src='/favicon.svg' alt='AI4COD' width='64' height='64' />
         AI for Code
       </h1>
 
