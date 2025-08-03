@@ -3,6 +3,7 @@ import ApplicationBase from '@/util/base/application_base'
 export default class ChatView extends ApplicationBase {
   state = {
     ...this.state,
+    router: null,
     response: {
       locale: 'pt-BR',
       title: 'AI for Code'
@@ -26,7 +27,28 @@ export default class ChatView extends ApplicationBase {
 
   title = (_) => this.state.response?.title
 
+  pendingConsent = (_) => !this.state.consent && this.state.router && this.state.router.asPath.lastIndexOf('/') <= 1
+
+  onClickConsent = (_) => {
+    const consent = true
+
+    localStorage.setItem('consent', true)
+
+    this.setState({ consent })
+  }
+
   componentDidMount = (_) => {
+    this.setState({
+      router: this.Helper.Next.Router,
+      consent: localStorage.getItem('consent') === 'true',
+      title:
+        window.location.host.replace(':', '.').split('.').length < 3
+          ? 'Tarefas de IA'
+          : window.location.host.split('.')[0],
+      description: 'Clique aqui. Tarefas de IA.',
+      canonical: window.location.origin,
+    })
+
     document.getElementById('input').focus()
   }
 
@@ -120,6 +142,41 @@ export default class ChatView extends ApplicationBase {
           </span>
         </div>
       </div>
+
+      {this.pendingConsent() && (
+        <div
+          tabIndex='-1'
+          className='fixed z-50 flex flex-col md:flex-row justify-between w-[calc(100%-2rem)] p-4 -translate-x-1/2 bg-gray-50 border border-pink-500 rounded-lg shadow-sm lg:max-w-7xl left-1/2 bottom-[14.25rem] dark:bg-gray-700 dark:border-gray-600'
+        >
+          <div className='flex flex-col items-start mb-3 mr-4 md:items-center md:flex-row md:mb-0'>
+            <p className='flex items-center mb-2 border-gray-200 md:pr-4 md:mr-4 md:border-r md:mb-0 dark:border-gray-600'>
+              <span className='self-center text-lg font-semibold whitespace-nowrap dark:text-white'>
+                {this.i18n('cookies_policy')}
+              </span>
+            </p>
+            <p className='flex items-center text-sm font-normal text-gray-500 dark:text-gray-400'>
+              <span>
+                {this.i18n('cookies_policy_description_1')}
+                <this.Helper.Tailwind.Link.Default
+                  href={this.termsPolicesURL('/cookies_policy')}
+                  className='text-sm text-gray-500 text-center dark:text-gray-400 underline'
+                >
+                  {this.i18n('cookies_policy')}
+                </this.Helper.Tailwind.Link.Default>
+                {this.i18n('cookies_policy_description_2')}
+              </span>
+            </p>
+          </div>
+          <div className='flex items-center flex-shrink-0'>
+            <this.Helper.Tailwind.Button.Default
+              onClick={this.onClickConsent.bind(this)}
+              className='px-5 py-2 mr-2 text-xs font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
+            >
+              {this.i18n('cookies_policy_button')}
+            </this.Helper.Tailwind.Button.Default>
+          </div>
+        </div>
+      )}
 
       <footer className=''>
         <this.Helper.Tailwind.Link.Default
