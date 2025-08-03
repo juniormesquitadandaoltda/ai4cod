@@ -69,6 +69,16 @@ views:
     linkedin: to see our Linkedin
     resume: "${name}\n+${count} jobs e opportunities\nClick here"
     clear_filter: Are you sure about clearing the search?
+  chat:
+    cookies_policy: Cookies Policy
+    cookies_policy_description_1: 'We use essential cookies and similar technologies in accordance with our '
+    cookies_policy_description_2: ' and, by continuing to browse, you agree to these conditions.'
+    cookies_policy_button: I've read and agree
+    privacy_policy: Privacy Policy and Data Protection
+    use_terms: Terms of Use
+    footer: All rights reserved © ${title}
+    release: v0.0.0
+    how_to: You need help? Click here.
 filter:
   title:
     is: '='

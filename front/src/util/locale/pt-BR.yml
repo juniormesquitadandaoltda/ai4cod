@@ -68,6 +68,16 @@ views:
     linkedin: para ver nosso Linkedin
     resume: "${name}\n+${count} vagas e oportunidades\nClique aqui"
     clear_filter: Tem certeza em limpar a pesquisa?
+  chat:
+    cookies_policy: Política de Cookies
+    cookies_policy_description_1: 'Utilizamos cookies essenciais e tecnologias semelhantes de acordo com a nossa '
+    cookies_policy_description_2: ' e, ao continuar navegando, você concorda com estas condições.'
+    cookies_policy_button: Eu li e concordo
+    privacy_policy: Política de Privacidade e Proteção de Dados
+    use_terms: Termos de Uso
+    footer: Todos os direitos reservados © ${title}
+    release: v0.0.0
+    how_to: Você precisa de ajuda? Clique aqui.
 filter:
   title:
     is: '='

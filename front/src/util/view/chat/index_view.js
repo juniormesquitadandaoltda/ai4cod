@@ -1,15 +1,30 @@
-import { Component } from 'react'
+import ApplicationBase from '@/util/base/application_base'
 
-export default class ChatView extends Component {
+export default class ChatView extends ApplicationBase {
   state = {
     ...this.state,
-    response: {},
+    response: {
+      locale: 'pt-BR',
+      title: 'AI for Code'
+    },
     messages: [],
     isCopying: false,
     isLoading: false,
     domain: 'ai4cod.com',
     currentTime: new Date().getTime()
   }
+
+  termsPolicesURL = (path) => path
+
+  i18n = (path, options = {}) =>
+    this.I18n.t(this.state.response?.locale, `views.${this.name}.${path}`, {
+      title: this.title(),
+      ...options,
+    })
+
+  name = 'chat'
+
+  title = (_) => this.state.response?.title
 
   componentDidMount = (_) => {
     document.getElementById('input').focus()
@@ -27,7 +42,7 @@ export default class ChatView extends Component {
     <div className='w-full h-screen bg-black text-green-400 font-mono flex flex-col select-text'>
       <h1 className='text-center text-4xl py-8 flex items-center justify-center gap-3'>
         <img src='/favicon.svg' alt='AI4COD' width='64' height='64' />
-        AI for Code
+        {this.title()}
       </h1>
 
       <div className='text-center text-lg mb-4 flex items-center justify-center gap-2'>
@@ -105,6 +120,29 @@ export default class ChatView extends Component {
           </span>
         </div>
       </div>
+
+      <footer className=''>
+        <this.Helper.Tailwind.Link.Default
+          href={this.termsPolicesURL('/cookies_policy')}
+          className='block text-sm text-gray-500 text-center dark:text-gray-400 underline'
+        >
+          {this.i18n('cookies_policy')}
+        </this.Helper.Tailwind.Link.Default>
+        <this.Helper.Tailwind.Link.Default
+          href={this.termsPolicesURL('/privacy_policy')}
+          className='block text-sm text-gray-500 text-center dark:text-gray-400 underline'
+        >
+          {this.i18n('privacy_policy')}
+        </this.Helper.Tailwind.Link.Default>
+        <this.Helper.Tailwind.Link.Default
+          href={this.termsPolicesURL('/use_terms')}
+          className='block text-sm text-gray-500 text-center dark:text-gray-400 underline'
+        >
+          {this.i18n('use_terms')}
+        </this.Helper.Tailwind.Link.Default>
+        <span className='block text-sm text-gray-500 text-center dark:text-gray-400'>{this.i18n('footer')}</span>
+        <span className='block text-sm text-gray-500 text-center dark:text-gray-400'>{this.i18n('release')}</span>
+      </footer>
     </div>
   )
 
