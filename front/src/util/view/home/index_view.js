@@ -96,7 +96,6 @@ export default class IndexView extends ApplicationView {
   }
 
   copyToClipboard = (text) => {
-    // Ativar efeito visual
     this.setState({ isCopying: true })
 
     if (navigator.clipboard) {
