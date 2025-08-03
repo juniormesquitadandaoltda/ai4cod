@@ -3,8 +3,15 @@ import { Component } from 'react'
 export default class ChatView extends Component {
   state = {
     ...this.state,
+    response: {},
     messages: [],
     isCopying: false,
+    domain: 'ai4cod.com',
+    currentTime: new Date().getTime()
+  }
+
+  componentDidMount = (_) => {
+    document.querySelector('input').focus()
   }
 
   render = (_) => this.state.response && this.template()
@@ -24,11 +31,11 @@ export default class ChatView extends Component {
 
       <div className='text-center text-lg mb-4 flex items-center justify-center gap-2'>
         <span className={`transition-colors duration-300 ${this.state.isCopying ? 'text-green-400' : 'text-gray-400'}`}>
-          ai4cod.com
+          {this.state.domain}
         </span>
         <button
           className='text-gray-500 hover:text-green-400 transition-colors cursor-pointer'
-          onClick={() => this.copyToClipboard('ai4cod.com')}
+          onClick={this.copyToClipboard.bind(this)}
           title='Copiar para área de transferência'
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -40,19 +47,18 @@ export default class ChatView extends Component {
       <div className='px-4 overflow-y-auto'>
         {this.state.messages.map((msg, index) => (
           <div key={index} className='mb-4'>
-            <div className='text-cyan-400'>Você: {msg.user}</div>
-            <div className='text-green-400'>AI: {msg.ai}</div>
+            <div className='text-cyan-400 text-right'>{msg.user}</div>
+            <div className='text-green-400 text-left'>{msg.ai}</div>
           </div>
         ))}
       </div>
 
       <div className='items-center w-full px-4 py-4'>
         <input
-          ref={input => input && input.focus()}
+          id='input'
           type='text'
           className='bg-transparent text-green-400 outline-none border-none font-mono w-full'
           placeholder='...'
-          autoFocus
           onKeyPress={(e) => e.key === 'Enter' && this.handleMessage(e.target.value)}
         />
       </div>
@@ -76,12 +82,13 @@ export default class ChatView extends Component {
     document.querySelector('input').value = ''
   }
 
-  copyToClipboard = (text) => {
+  copyToClipboard = (event) => {
+    event.preventDefault()
+
     this.setState({ isCopying: true })
 
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(() => {
-        console.log('Copiado: ' + text)
+      navigator.clipboard.writeText(this.state.domain).then(() => {
         setTimeout(() => {
           this.setState({ isCopying: false })
         }, 200)
@@ -90,7 +97,7 @@ export default class ChatView extends Component {
       })
     } else {
       const textArea = document.createElement('textarea')
-      textArea.value = text
+      textArea.value = this.state.domain
       document.body.appendChild(textArea)
       textArea.select()
       document.execCommand('copy')

@@ -1,5 +1,5 @@
-import HomeController from '@/controllers/home_controller'
+import ChatController from '@/controllers/chat_controller'
 
-export default class Page extends HomeController {
+export default class Page extends ChatController {
   action = 'Index'
 }

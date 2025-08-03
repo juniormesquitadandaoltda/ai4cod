@@ -35,6 +35,13 @@ const View = {
     }),
     {},
   ),
+  Chat: ['Index'].reduce(
+    (object, child) => ({
+      ...object,
+      [child]: require(`./view/chat/${child.toLowerCase()}_view`).default,
+    }),
+    {},
+  ),
 }
 
 export default class ApplicationUtil extends ApplicationBase {
