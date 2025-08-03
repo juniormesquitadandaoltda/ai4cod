@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <rect width="32" height="32" fill="transparent" rx="4"/>
+  
+  <!-- Brackets centralized -->
+  <text x="16" y="20" font-family="monospace" font-size="10" fill="#4ade80" text-anchor="middle" font-weight="bold">&lt;/&gt;</text>
+  
+  <!-- Neural network dots -->
+  <circle cx="4" cy="6" r="1.5" fill="#4ade80" opacity="0.8"/>
+  <circle cx="28" cy="6" r="1.5" fill="#4ade80" opacity="0.8"/>
+  <circle cx="4" cy="16" r="1.5" fill="#4ade80" opacity="0.8"/>
+  <circle cx="28" cy="16" r="1.5" fill="#4ade80" opacity="0.8"/>
+  <circle cx="4" cy="26" r="1.5" fill="#4ade80" opacity="0.8"/>
+  <circle cx="28" cy="26" r="1.5" fill="#4ade80" opacity="0.8"/>
+  <circle cx="10" cy="10" r="1" fill="#4ade80" opacity="0.6"/>
+  <circle cx="22" cy="10" r="1" fill="#4ade80" opacity="0.6"/>
+  <circle cx="10" cy="22" r="1" fill="#4ade80" opacity="0.6"/>
+  <circle cx="22" cy="22" r="1" fill="#4ade80" opacity="0.6"/>
+  
+  <!-- Connection lines -->
+  <line x1="4" y1="6" x2="10" y2="10" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+  <line x1="28" y1="6" x2="22" y2="10" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+  <line x1="4" y1="16" x2="12" y2="18" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+  <line x1="28" y1="16" x2="20" y2="18" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+  <line x1="4" y1="26" x2="10" y2="22" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+  <line x1="28" y1="26" x2="22" y2="22" stroke="#4ade80" stroke-width="0.8" opacity="0.6"/>
+  <line x1="10" y1="10" x2="16" y2="14" stroke="#4ade80" stroke-width="0.6" opacity="0.4"/>
+  <line x1="22" y1="10" x2="16" y2="14" stroke="#4ade80" stroke-width="0.6" opacity="0.4"/>
+  <line x1="10" y1="22" x2="16" y2="18" stroke="#4ade80" stroke-width="0.6" opacity="0.4"/>
+  <line x1="22" y1="22" x2="16" y2="18" stroke="#4ade80" stroke-width="0.6" opacity="0.4"/>
+</svg>
