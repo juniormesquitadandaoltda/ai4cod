@@ -12,7 +12,7 @@ export default class ChatView extends Component {
   }
 
   componentDidMount = (_) => {
-    document.querySelector('input').focus()
+    document.getElementById('input').focus()
   }
 
   render = (_) => this.state.response && this.template()
@@ -37,7 +37,6 @@ export default class ChatView extends Component {
         <a
           className='text-gray-500 hover:text-green-400 transition-colors cursor-pointer'
           onClick={this.copyToClipboard.bind(this)}
-          title='Copiar para área de transferência'
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92S19.61 16.08 18 16.08z"/>
@@ -69,15 +68,37 @@ export default class ChatView extends Component {
         )}
       </div>
 
-      <div className='items-center w-full px-4 py-4'>
-        <input
+      <div className='flex items-end gap-3 w-full px-4 py-4'>
+        <textarea
           id='input'
-          type='text'
-          className='bg-transparent text-cyan-400 outline-none border-none font-mono w-full'
+          className='bg-transparent text-cyan-400 outline-none border border-gray-600 rounded-lg font-mono w-full min-h-[40px] max-h-[200px] resize-none p-3'
           placeholder='...'
           disabled={this.state.isLoading}
-          onKeyPress={(e) => e.key === 'Enter' && this.handleMessage(e.target.value)}
+          autoComplete="off"
+          rows={1}
+          onInput={(e) => {
+            e.target.style.height = 'auto'
+            e.target.style.height = Math.min(e.target.scrollHeight, 200) + 'px'
+          }}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+              e.preventDefault()
+              this.handleMessage(e.target.value)
+            }
+          }}
         />
+        <button
+          onClick={() => this.handleMessage(document.getElementById('input').value)}
+          disabled={this.state.isLoading}
+          className='text-gray-500 hover:text-green-400 transition-colors p-2 disabled:opacity-50 disabled:cursor-not-allowed'
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+          <span className='text-gray-500 text-sm'>
+            {navigator.userAgent.includes('Mac') ? 'Cmd + Enter' : 'Ctrl + Enter'}
+          </span>
+        </button>
       </div>
     </div>
   )
@@ -85,7 +106,9 @@ export default class ChatView extends Component {
   handleMessage = (text) => {
     if (!text.trim() || this.state.isLoading) return
 
-    document.querySelector('input').value = ''
+    const textarea = document.getElementById('input')
+    textarea.value = ''
+    textarea.style.height = 'auto'
 
     this.setState({ isLoading: true, messages: [...this.state.messages, text] })
 
@@ -98,7 +121,7 @@ export default class ChatView extends Component {
       })
 
       setTimeout(() => {
-        document.querySelector('input').focus()
+        textarea.focus()
       }, 100)
 
     }, 1000)
