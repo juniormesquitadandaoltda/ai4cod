@@ -34,7 +34,7 @@ export default class IndexView extends ApplicationView {
   )
 
   terminal = (_) => (
-    <div className='w-full h-screen bg-black text-green-400 font-mono flex flex-col'>
+    <div className='w-full h-screen bg-black text-green-400 font-mono flex flex-col select-text'>
       <h1 className='text-center text-4xl py-8 flex items-center justify-center gap-3'>
         <img src='/favicon.svg' alt='AI4COD' width='64' height='64' />
         AI for Code
@@ -42,8 +42,8 @@ export default class IndexView extends ApplicationView {
 
       <div className='text-center text-lg text-gray-400 mb-4 flex items-center justify-center gap-2'>
         <span>ai4cod.com</span>
-                <button
-          className='text-gray-500 hover:text-green-400 transition-colors'
+        <button
+          className='text-gray-500 hover:text-green-400 transition-colors cursor-pointer'
           onClick={() => this.copyToClipboard('ai4cod.com')}
           title='Copiar para área de transferência'
         >
