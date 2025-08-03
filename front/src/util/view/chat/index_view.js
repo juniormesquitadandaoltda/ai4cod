@@ -68,7 +68,7 @@ export default class ChatView extends Component {
         )}
       </div>
 
-      <div className='flex items-end gap-3 w-full px-4 py-4'>
+      <div className='w-full px-4 py-4'>
         <textarea
           id='input'
           className='bg-transparent text-cyan-400 outline-none border border-gray-600 rounded-lg font-mono w-full min-h-[40px] max-h-[200px] resize-none p-3'
@@ -87,18 +87,23 @@ export default class ChatView extends Component {
             }
           }}
         />
-        <button
-          onClick={() => this.handleMessage(document.getElementById('input').value)}
-          disabled={this.state.isLoading}
-          className='text-gray-500 hover:text-green-400 transition-colors p-2 disabled:opacity-50 disabled:cursor-not-allowed'
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-          </svg>
-          <span className='text-gray-500 text-sm'>
-            {navigator.userAgent.includes('Mac') ? 'Cmd + Enter' : 'Ctrl + Enter'}
+      </div>
+
+      <div className='flex justify-end w-full px-4 pb-4'>
+        <div className='flex flex-col items-center gap-1'>
+          <button
+            onClick={() => this.handleMessage(document.getElementById('input').value)}
+            disabled={this.state.isLoading}
+            className='text-gray-500 hover:text-green-400 transition-colors p-3 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg border border-gray-600 hover:border-green-400'
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+          <span className='text-gray-600 text-xs whitespace-nowrap'>
+            {navigator.userAgent.includes('Mac') ? 'Cmd+Enter' : 'Ctrl+Enter'}
           </span>
-        </button>
+        </div>
       </div>
     </div>
   )
