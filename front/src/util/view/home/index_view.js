@@ -7,6 +7,7 @@ export default class IndexView extends ApplicationView {
       query: '',
     },
     messages: [],
+    isCopying: false,
   }
 
   index = (_) => this.request(null)
@@ -40,8 +41,10 @@ export default class IndexView extends ApplicationView {
         AI for Code
       </h1>
 
-      <div className='text-center text-lg text-gray-400 mb-4 flex items-center justify-center gap-2'>
-        <span>ai4cod.com</span>
+      <div className='text-center text-lg mb-4 flex items-center justify-center gap-2'>
+        <span className={`transition-colors duration-300 ${this.state.isCopying ? 'text-green-400' : 'text-gray-400'}`}>
+          ai4cod.com
+        </span>
         <button
           className='text-gray-500 hover:text-green-400 transition-colors cursor-pointer'
           onClick={() => this.copyToClipboard('ai4cod.com')}
@@ -69,7 +72,6 @@ export default class IndexView extends ApplicationView {
           className='bg-transparent text-green-400 outline-none border-none font-mono w-full'
           placeholder='...'
           autoFocus
-          onBlur={(e) => e.target.focus()}
           onKeyPress={(e) => e.key === 'Enter' && this.handleMessage(e.target.value)}
         />
       </div>
@@ -94,22 +96,28 @@ export default class IndexView extends ApplicationView {
   }
 
   copyToClipboard = (text) => {
+    // Ativar efeito visual
+    this.setState({ isCopying: true })
+
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(() => {
-        // Feedback visual simples
         console.log('Copiado: ' + text)
+        setTimeout(() => {
+          this.setState({ isCopying: false })
+        }, 200)
       }).catch(err => {
-        console.error('Erro ao copiar: ', err)
+        this.setState({ isCopying: false })
       })
     } else {
-      // Fallback para navegadores mais antigos
       const textArea = document.createElement('textarea')
       textArea.value = text
       document.body.appendChild(textArea)
       textArea.select()
       document.execCommand('copy')
       document.body.removeChild(textArea)
-      console.log('Copiado (fallback): ' + text)
+      setTimeout(() => {
+        this.setState({ isCopying: false })
+      }, 200)
     }
   }
 }
