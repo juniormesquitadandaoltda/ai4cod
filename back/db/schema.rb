@@ -82,6 +82,16 @@ ActiveRecord::Schema[7.0].define(version: 2025_06_07_200710) do
     t.index ["subscription_id"], name: "index_calleds_on_subscription_id"
   end
 
+  create_table "chats", force: :cascade do |t|
+    t.text "question", null: false
+    t.text "answer", null: false
+    t.integer "tokens_count", default: 0, null: false
+    t.bigint "subscription_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_chats_on_subscription_id"
+  end
+
   create_table "collaborators", force: :cascade do |t|
     t.boolean "actived", default: false, null: false
     t.bigint "user_id", null: false
@@ -170,6 +180,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_06_07_200710) do
     t.bigint "facilitators_count", default: 0, null: false
     t.bigint "vehicles_count", default: 0, null: false
     t.bigint "tasks_count", default: 0, null: false
+    t.bigint "chats_count", default: 0, null: false
+    t.bigint "tokens_count", default: 0, null: false
     t.bigint "archives_count", default: 0, null: false
     t.index "lower((name)::text), user_id", name: "index_subscriptions_on_LOWER_name_user_id", unique: true
     t.index ["user_id"], name: "index_subscriptions_on_user_id"
@@ -290,6 +302,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_06_07_200710) do
   add_foreign_key "audits", "users", column: "owner_id"
   add_foreign_key "audits", "users", column: "whodunnit_id"
   add_foreign_key "calleds", "subscriptions"
+  add_foreign_key "chats", "subscriptions"
   add_foreign_key "collaborators", "subscriptions"
   add_foreign_key "collaborators", "users"
   add_foreign_key "facilitators", "subscriptions"

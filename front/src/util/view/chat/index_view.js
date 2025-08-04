@@ -25,6 +25,10 @@ export default class ChatView extends ApplicationBase {
 
   name = 'chat'
 
+  paths = (_) => this.state.response?.paths || []
+
+  model = (_) => this.state.response?.model || {}
+
   title = (_) => this.state.response?.title
 
   pendingConsent = (_) => !this.state.consent && this.state.router && this.state.router.asPath.lastIndexOf('/') <= 1
@@ -58,6 +62,23 @@ export default class ChatView extends ApplicationBase {
         this.answer(this.i18n('request_email_and_consent'))
       })
     })
+  }
+
+  logout = (_) => {
+    event.preventDefault()
+
+    this.request(
+      {
+        url: '/login/session',
+        method: 'delete',
+        data: {
+          authenticity_token: this.authenticityToken(),
+        },
+      },
+      () => {
+        window.location.reload()
+      }
+    )
   }
 
   authenticityToken = (_) => this.state.response?.authenticity_token
@@ -258,10 +279,28 @@ export default class ChatView extends ApplicationBase {
       </div>
 
       <div className='flex justify-end w-full px-4 pb-4'>
+        {this.model().email && (
+          <div className='flex flex-col items-center gap-1'>
+            <button
+              onClick={this.logout.bind(this)}
+              disabled={this.state.loading}
+              type='button'
+              title='Logout'
+              className='text-gray-500 hover:text-green-400 transition-colors p-3 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg border border-gray-600 hover:border-green-400'
+            >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 13v-2H7V8l-5 4 5 4v-3z"/>
+              <path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"/>
+            </svg>
+            </button>
+          </div>
+        )}
+
         <div className='flex flex-col items-center gap-1'>
           <button
             onClick={() => this.handleMessage(document.getElementById('input').value)}
             disabled={this.state.loading}
+            type='button'
             className='text-gray-500 hover:text-green-400 transition-colors p-3 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg border border-gray-600 hover:border-green-400'
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -309,7 +348,7 @@ export default class ChatView extends ApplicationBase {
         </div>
       )}
 
-      <footer className=''>
+      <footer className='mt-4'>
         <this.Helper.Tailwind.Link.Default
           href={this.termsPolicesURL('/cookies_policy')}
           className='block text-sm text-gray-500 text-center dark:text-gray-400 underline'

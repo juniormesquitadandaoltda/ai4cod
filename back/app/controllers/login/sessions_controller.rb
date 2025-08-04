@@ -83,7 +83,7 @@ module Login
       sign_up = devise_parameter_sanitizer.sanitize(:sign_up)
 
       sign_up.merge(
-        email: sign_up[:email].to_s.downcase.delete(' ').presence
+        email: sign_up[:email].to_s.downcase.strip.delete(' ').presence
       )
     end
 
@@ -91,8 +91,8 @@ module Login
       sign_in = devise_parameter_sanitizer.sanitize(:sign_in)
 
       sign_in.merge(
-        email: sign_in[:email].to_s.downcase.delete(' ').presence,
-        password: sign_in[:password].to_s.delete(' ').presence
+        email: sign_in[:email].to_s.downcase.strip.delete(' ').presence,
+        password: sign_in[:password].to_s.strip.delete(' ').presence
       )
     end
 
