@@ -78,7 +78,7 @@ views:
     footer: Todos os direitos reservados © ${title}
     release: v0.0.0
     how_to: Você precisa de ajuda? Clique aqui.
-    request_email_and_consent: Olá! Para começar, por favor leia e aceite nossas políticas de Cookies, Privacidade e Termos de Uso. Em seguida, informe seu email para que eu possa te auxiliar da melhor forma.
+    request_email_and_consent: Olá! Para começar, por favor leia e aceite nossas políticas de <a href="/cookies_policy" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Cookies</a>, <a href="/privacy_policy" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Privacidade</a> e <a href="/use_terms" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Termos</a>. Em seguida, informe seu email para que eu possa te auxiliar da melhor forma.
     request_temp_password: Por favor, copie a senha temporária que foi enviada para seu email e cole aqui para continuar.
     welcome: Olá ${email}! Como posso te ajudar hoje?
 filter:

@@ -211,7 +211,11 @@ export default class ChatView extends ApplicationBase {
         {this.state.messages.map((msg, index) => (
           (index % 2 === 0 && (
             <div key={index} className='mb-4'>
-              <div className='text-green-400 text-left'>{msg}</div>
+              {msg === this.i18n('request_email_and_consent') ? (
+                <div className='text-green-400 text-left' dangerouslySetInnerHTML={{__html: msg}}></div>
+              ) : (
+                <div className='text-green-400 text-left'>{msg}</div>
+              )}
             </div>
           )) || (
             <div key={index} className='mb-4'>

@@ -79,7 +79,7 @@ views:
     footer: All rights reserved © ${title}
     release: v0.0.0
     how_to: You need help? Click here
-    request_email_and_consent: Hello! To get started, please read and accept our Cookie, Privacy, and Terms of Use policies. Then, provide your email so I can assist you in the best way possible.
+    request_email_and_consent: Hello! To get started, please read and accept our <a href="/cookies_policy" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Cookies</a>, <a href="/privacy_policy" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Privacy</a> and <a href="/use_terms" target="_blank" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Terms</a>. Then, provide your email so I can assist you in the best way possible.
     request_temp_password: Please, copy the temporary password sent to your email and paste it here to continue.
     welcome: Hello ${email}! How can I help you today?
 filter:
