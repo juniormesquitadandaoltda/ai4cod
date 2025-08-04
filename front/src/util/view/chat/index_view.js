@@ -53,6 +53,10 @@ export default class ChatView extends ApplicationBase {
 
     this.request({url: '/standard/session', method: 'get'}, ({model}) => {
       this.answer(this.i18n('welcome', {email: model.email}))
+    }, () => {
+      this.request({url: '/login/session/new', method: 'get'}, () => {
+        this.answer(this.i18n('request_email_and_consent'))
+      })
     })
   }
 
