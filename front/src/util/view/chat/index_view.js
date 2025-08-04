@@ -9,8 +9,8 @@ export default class ChatView extends ApplicationBase {
       title: 'AI for Code'
     },
     messages: [],
-    isCopying: false,
-    isLoading: false,
+    copying: false,
+    loading: false,
     domain: 'ai4cod.com',
     currentTime: new Date().getTime()
   }
@@ -50,6 +50,128 @@ export default class ChatView extends ApplicationBase {
     })
 
     document.getElementById('input').focus()
+
+    this.request({url: '/standard/session', method: 'get'}, ({model}) => {
+      this.answer(this.i18n('welcome', {email: model.email}))
+    })
+  }
+
+  authenticityToken = (_) => this.state.response?.authenticity_token
+
+  request = async (params, success, fail) => {
+    this.setState({ loading: true })
+    let response = null
+
+    try {
+      response = await this.Helper.Axios(params)
+
+      if (success) success(response.data)
+    } catch (error) {
+      response = error.response
+      if (fail) fail(response.data)
+    }
+
+    this.setState({
+      response: { ...this.state.response, ...response.data, title: 'AI for Code' },
+      status: response.status,
+      currentTime: new Date().getTime(),
+    })
+  }
+
+  handleMessage = (value) => {
+    if (!value.trim() || this.state.loading) return
+
+    document.getElementById('input').value = ''
+
+    if (this.state.messages.length === 1 && this.state.messages[0] === this.i18n('request_email_and_consent')){
+      this.setState({ loading: true, messages: [...this.state.messages, value] })
+
+      this.request({
+        url: '/login/session',
+        method: 'put',
+        data: {
+          user: {
+            email: value,
+            policy_terms: true,
+          },
+          authenticity_token: this.authenticityToken(),
+        },
+      }, () => {
+        this.answer(this.i18n('request_temp_password'))
+      }, ({error}) => {
+        this.setState({ loading: false, messages: [...this.state.messages, error.email] })
+      })
+    } else if (this.state.messages.length === 3 && this.state.messages[2] !== this.i18n('request_temp_password')) {
+      this.setState({ messages: [this.state.messages[0]] }, () => {
+        this.handleMessage(value)
+      })
+    } else if (this.state.messages.length === 3 && this.state.messages[2] === this.i18n('request_temp_password')) {
+      this.setState({ loading: true, messages: [...this.state.messages, '*'] })
+
+      this.request({
+        url: '/login/session',
+        method: 'post',
+        data: {
+          user: {
+            email: this.state.messages[1],
+            policy_terms: true,
+            password: value,
+          },
+          authenticity_token: this.authenticityToken(),
+        },
+      }, ({redirect}) => {
+        this.request({
+          url: redirect,
+          method: 'get',
+        }, ({model}) => {
+          this.setState({ loading: false, messages: [this.i18n('welcome', {email: model.email})]})
+        })
+      })
+    } else if (this.state.messages.length === 5 && this.state.messages[2] === this.i18n('request_temp_password')) {
+      this.setState({ messages: [this.state.messages[0], this.state.messages[1], this.state.messages[2]] }, () => {
+        this.handleMessage(value)
+      })
+    } else {
+      setTimeout(() => {
+        const reversedText = value.split('').reverse().join('')
+
+        this.answer(reversedText)
+      }, 1000)
+    }
+  }
+
+  answer = (text) => {
+    this.setState({ loading: false, messages: [...this.state.messages, text] })
+
+    setTimeout(() => {
+      document.getElementById('input').focus()
+    }, 100)
+  }
+
+  copyToClipboard = (event) => {
+    event.preventDefault()
+
+    this.setState({ copying: true })
+
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(this.state.domain).then(() => {
+        setTimeout(() => {
+          this.setState({ copying: false })
+        }, 200)
+      }).catch(err => {
+        this.setState({ copying: false })
+      })
+    } else {
+      const textArea = document.createElement('textarea')
+      textArea.value = this.state.domain
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea)
+      setTimeout(() => {
+        this.setState({ copying: false })
+      }, 200)
+    }
   }
 
   render = (_) => this.state.response && this.template()
@@ -68,7 +190,7 @@ export default class ChatView extends ApplicationBase {
       </h1>
 
       <div className='text-center text-lg mb-4 flex items-center justify-center gap-2'>
-        <span className={`transition-colors duration-300 ${this.state.isCopying ? 'text-green-400' : 'text-gray-400'}`}>
+        <span className={`transition-colors duration-300 ${this.state.copying ? 'text-green-400' : 'text-gray-400'}`}>
           {this.state.domain}
         </span>
         <a
@@ -85,16 +207,16 @@ export default class ChatView extends ApplicationBase {
         {this.state.messages.map((msg, index) => (
           (index % 2 === 0 && (
             <div key={index} className='mb-4'>
-              <div className='text-cyan-400 text-right'>{msg}</div>
+              <div className='text-green-400 text-left'>{msg}</div>
             </div>
           )) || (
             <div key={index} className='mb-4'>
-              <div className='text-green-400 text-left'>{msg}</div>
+              <div className='text-cyan-400 text-right'>{msg}</div>
             </div>
           )
         ))}
 
-        {this.state.isLoading && (
+        {this.state.loading && (
           <div className='mb-4 flex items-center gap-2'>
             <div className='flex space-x-1'>
               <div className='w-2 h-2 bg-green-400 rounded-full animate-bounce'></div>
@@ -108,9 +230,10 @@ export default class ChatView extends ApplicationBase {
       <div className='w-full px-4 py-4'>
         <textarea
           id='input'
+          height='auto'
           className='bg-transparent text-cyan-400 outline-none border border-gray-600 rounded-lg font-mono w-full min-h-[40px] max-h-[200px] resize-none p-3'
           placeholder='...'
-          disabled={this.state.isLoading}
+          disabled={this.state.loading}
           autoComplete="off"
           rows={1}
           onInput={(e) => {
@@ -130,7 +253,7 @@ export default class ChatView extends ApplicationBase {
         <div className='flex flex-col items-center gap-1'>
           <button
             onClick={() => this.handleMessage(document.getElementById('input').value)}
-            disabled={this.state.isLoading}
+            disabled={this.state.loading}
             className='text-gray-500 hover:text-green-400 transition-colors p-3 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg border border-gray-600 hover:border-green-400'
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -202,54 +325,4 @@ export default class ChatView extends ApplicationBase {
       </footer>
     </div>
   )
-
-  handleMessage = (text) => {
-    if (!text.trim() || this.state.isLoading) return
-
-    const textarea = document.getElementById('input')
-    textarea.value = ''
-    textarea.style.height = 'auto'
-
-    this.setState({ isLoading: true, messages: [...this.state.messages, text] })
-
-    setTimeout(() => {
-      const reversedText = text.split('').reverse().join('')
-
-      this.setState({
-        messages: [...this.state.messages, reversedText],
-        isLoading: false
-      })
-
-      setTimeout(() => {
-        textarea.focus()
-      }, 100)
-
-    }, 1000)
-  }
-
-  copyToClipboard = (event) => {
-    event.preventDefault()
-
-    this.setState({ isCopying: true })
-
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(this.state.domain).then(() => {
-        setTimeout(() => {
-          this.setState({ isCopying: false })
-        }, 200)
-      }).catch(err => {
-        this.setState({ isCopying: false })
-      })
-    } else {
-      const textArea = document.createElement('textarea')
-      textArea.value = this.state.domain
-      document.body.appendChild(textArea)
-      textArea.select()
-      document.execCommand('copy')
-      document.body.removeChild(textArea)
-      setTimeout(() => {
-        this.setState({ isCopying: false })
-      }, 200)
-    }
-  }
 }
